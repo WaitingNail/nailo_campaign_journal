@@ -2,5 +2,113 @@
   "schemaVersion": 1,
   "ownerName": "奈羅",
   "demo": false,
-  "campaigns": []
+  "campaigns": [
+    {
+      "id": "592b63fd-e063-4faa-9b99-ad64f5e332b9",
+      "title": "寂靜之音",
+      "role": "played",
+      "system": "coc",
+      "systemName": "",
+      "gm": "朱朱",
+      "edition": "7e",
+      "status": "completed",
+      "startDate": "2023-07-15",
+      "endDate": "2025-10-26",
+      "description": "一部日治時代的無聲電影，安靜地在酒吧放映。一切寂然無聲。而可怕的陰影籠罩著，人們對此還一無所知……",
+      "characters": [
+        {
+          "id": "b18d142f-4280-43dd-a8ad-e9e3bb89fff5",
+          "name": "王熙文",
+          "player": "奈羅",
+          "mine": true,
+          "portrait": "./assets/characters/ad496b2035594c13ae9c30d2991063c3.png",
+          "portraitAlt": "",
+          "color": "#33A6B8",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "電影明星",
+          "attributes": {
+            "STR": 45,
+            "CON": 55,
+            "SIZ": 55,
+            "DEX": 50,
+            "APP": 70,
+            "INT": 50,
+            "POW": 75,
+            "EDU": 65
+          },
+          "skills": [
+            {
+              "name": "藝術(表演)",
+              "value": 75
+            },
+            {
+              "name": "魅力",
+              "value": 40
+            },
+            {
+              "name": "攀爬",
+              "value": 30
+            },
+            {
+              "name": "信用評級",
+              "value": 70
+            },
+            {
+              "name": "克蘇魯神話知識",
+              "value": 10
+            },
+            {
+              "name": "偽裝",
+              "value": 35
+            },
+            {
+              "name": "閃避",
+              "value": 25
+            },
+            {
+              "name": "開車",
+              "value": 50
+            },
+            {
+              "name": "戰鬥(鬥毆)",
+              "value": 70
+            },
+            {
+              "name": "語言(英文)",
+              "value": 53
+            },
+            {
+              "name": "母語",
+              "value": 65
+            },
+            {
+              "name": "說服",
+              "value": 40
+            },
+            {
+              "name": "心理學",
+              "value": 30
+            },
+            {
+              "name": "識破",
+              "value": 41
+            },
+            {
+              "name": "作夢",
+              "value": 59
+            },
+            {
+              "name": "夢學識",
+              "value": 15
+            }
+          ],
+          "notes": "王熙文，台灣藝術大學戲劇系畢業，知名動作指導王宗華(Chris Wang)與舞蹈家林雯華(Mathilde Lin)的長女，小時候跟著父親到片場工作，因此喜歡上了片場的生活，也讓她從小就萌生跟隨父親腳步的夢想，進入電影產業工作。小學就開始學習跆拳道，直到22歲取得黑帶3段的資格時，她的父親開心地買了一支錶當作恭喜她的禮物。大學時候也去學習自由搏擊，甚至也參加了亞洲區的自由搏擊比賽。\n有一個妹妹王希媛，從她24歲出道以來就一直擔任她的貼身助理，姊妹倆感情很好。\n經紀人張姊，張秀娟是母親認識很久的朋友，也因此在出道時就簽給萊納娛樂(Leonard Entertainment Corp)。\n2016年憑藉『迷蹤之影』中的警探陳玥，入圍第53屆金馬獎最佳女主角，雖然最後敗給了『七月與安生』的周冬雨與馬思純，但也因此令她聲勢大漲。\n因為父母是基督徒，所以自小就受洗的她，是主虔誠的追隨者，其他的宗教對她與她的家人來說，都是文化的一部分，終究都是要追隨主耶穌的腳步。",
+          "sheetUrl": ""
+        }
+      ],
+      "sessions": []
+    }
+  ]
 }
