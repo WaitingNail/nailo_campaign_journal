@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap');
+:root{font-size:16px;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f0e8;color:#192e37;font-family:'Noto Sans TC',system-ui,sans-serif;line-height:1.6}
+button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:3px solid #d69e45;outline-offset:3px}
+h1,h2,h3,p{margin:0}svg{display:block;flex-shrink:0}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.skip-link{position:fixed;top:-100px;left:10px;z-index:20;background:white;padding:12px}.skip-link:focus{top:10px}
+.boot{padding:3rem}
+.status{font-size:.75rem;padding:3px 9px;border-radius:4px;background:#e9f5f0;color:#328061;white-space:nowrap}.status.completed{background:#edf0f6;color:#61718f}.status.paused{background:#faf2e2;color:#94733c}.status.planned{background:#f1edf6;color:#7c6a99}.status.abandoned{background:#f9eded;color:#a96368}

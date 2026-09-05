@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="二十面骰">
+  <rect width="64" height="64" rx="16" fill="#121f2a"/>
+  <g fill="none" stroke="#78d4c4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 5 56 21 48 53 32 60 16 53 8 21 32 5Z" fill="#19313d"/>
+    <path d="m32 5-10 19h20L32 5ZM8 21l14 3-6 29M56 21l-14 3 6 29M22 24l10 20 10-20M16 53l16-9 16 9M32 44v16"/>
+  </g>
+  <path d="m22 24 10 20 10-20Z" fill="#78d4c4" opacity=".14"/>
+</svg>

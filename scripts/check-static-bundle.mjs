@@ -1,0 +1,14 @@
+import {readFile} from 'node:fs/promises';
+import vm from 'node:vm';
+const root=new URL('../',import.meta.url);
+const bundle=await readFile(new URL('dist/app.bundle.js',root),'utf8');
+const data=JSON.parse(await readFile(new URL('dist/data/campaigns.json',root),'utf8'));
+const element=()=>({innerHTML:'',addEventListener(){},querySelector(){return null;}});
+const elements={app:element(),main:element()};
+const document={baseURI:'https://example.test/nailo_campaign_journal/',title:'',activeElement:null,getElementById:id=>elements[id]||null,querySelector(){return null},querySelectorAll(){return[]}};
+const context={console,URL,document,location:{hash:''},fetch:async()=>({ok:true,json:async()=>data}),requestAnimationFrame:callback=>callback(),setTimeout,clearTimeout,window:{addEventListener(){},scrollTo(){}}};
+vm.runInNewContext(bundle,context,{filename:'app.bundle.js'});
+await new Promise(resolve=>setTimeout(resolve,0));
+if(!elements.app.innerHTML.includes('public-site'))throw new Error('Public app did not render.');
+if(/管理後台|#\/manage/.test(elements.app.innerHTML))throw new Error('Public app contains an admin link.');
+console.log(`Public bundle booted with ${data.campaigns.length} campaigns and no admin link.`);

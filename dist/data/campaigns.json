@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 1,
+  "ownerName": "奈羅",
+  "demo": true,
+  "campaigns": [
+    {
+      "id": "silver-coast",
+      "title": "銀岸遠征",
+      "system": "dnd",
+      "systemName": "",
+      "edition": "5e · 2014",
+      "role": "played",
+      "gm": "霧舟",
+      "status": "active",
+      "startDate": "2026-06-06",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "alara",
+          "name": "艾菈・逐星",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [
+            {
+              "name": "法師",
+              "level": 7,
+              "subclass": "預言學派"
+            }
+          ],
+          "background": "學者",
+          "ancestry": "高等精靈",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "把每段旅途寫在星圖背面。比起預言的終點，她更在意同行的人。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "brom",
+          "name": "布隆",
+          "player": "青禾",
+          "mine": false,
+          "classes": [
+            {
+              "name": "戰士",
+              "level": 7,
+              "subclass": "戰鬥大師"
+            }
+          ],
+          "background": "士兵",
+          "ancestry": "山地矮人",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "tia",
+          "name": "緹雅",
+          "player": "小鹿",
+          "mine": false,
+          "classes": [
+            {
+              "name": "遊蕩者",
+              "level": 7,
+              "subclass": "盜賊"
+            }
+          ],
+          "background": "罪犯",
+          "ancestry": "半身人",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "海潮帶來一封沒有收件人的求救信。三名旅人沿著銀色海岸追索失落燈塔的光，逐漸發現航海圖上被擦去的島嶼。",
+      "sessions": [
+        {
+          "id": "silver-coast-s1",
+          "date": "2026-06-06",
+          "title": "潮汐帶來的信",
+          "summary": "我們在鹽港的旅店交換了各自收到的信。紙張上的水漬竟然拼成同一張海圖；布隆認出圖角的軍團徽記，卻沒有解釋他為何知道。",
+          "url": ""
+        },
+        {
+          "id": "silver-coast-s2",
+          "date": "2026-06-20",
+          "title": "失去光的燈塔",
+          "summary": "緹雅找到藏在樓梯底下的航行日誌。艾菈放棄追逐逃走的信使，留下維持照明，讓困在潮洞裡的孩子平安回到岸上。",
+          "url": ""
+        },
+        {
+          "id": "silver-coast-s3",
+          "date": "2026-07-04",
+          "title": "被抹去的島嶼",
+          "summary": "沒有名字的島就在海霧後方。守塔人只願意用一段記憶交換渡海的方法，而我們還沒有決定誰要付出代價。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "winter-oath",
+      "title": "寒原誓約",
+      "system": "dnd",
+      "systemName": "",
+      "edition": "5e · 2014",
+      "role": "played",
+      "gm": "阿嵐",
+      "status": "completed",
+      "startDate": "2026-03-07",
+      "endDate": "2026-04-18",
+      "characters": [
+        {
+          "id": "kaelan",
+          "name": "凱嵐・灰燼",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [
+            {
+              "name": "聖武士",
+              "level": 6,
+              "subclass": "奉獻之誓"
+            },
+            {
+              "name": "邪術師",
+              "level": 2,
+              "subclass": "至高妖精"
+            }
+          ],
+          "background": "士兵",
+          "ancestry": "半精靈",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "wren",
+          "name": "芮恩",
+          "player": "小鹿",
+          "mine": false,
+          "classes": [
+            {
+              "name": "德魯伊",
+              "level": 8,
+              "subclass": "大地結社"
+            }
+          ],
+          "background": "化外之民",
+          "ancestry": "木精靈",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "邊境的冬天遲遲不肯結束。一個曾經背棄誓約的守衛，必須重新決定自己願意守護的事物。",
+      "sessions": [
+        {
+          "id": "winter-oath-s1",
+          "date": "2026-03-07",
+          "title": "邊境的第一場雪",
+          "summary": "我們接下護送最後一批糧車的工作。封路的並不是風雪，而是拒絕放下武器的舊日戰友。",
+          "url": ""
+        },
+        {
+          "id": "winter-oath-s2",
+          "date": "2026-04-18",
+          "title": "春日之前",
+          "summary": "凱嵐折斷象徵舊誓的徽章，與村民一起推開結冰的城門。等到第一滴融雪落下，我們已不需要領主的許可。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "clockwork-garden",
+      "title": "發條花園",
+      "system": "dnd",
+      "systemName": "",
+      "edition": "5e · 2024",
+      "role": "played",
+      "gm": "霧舟",
+      "status": "paused",
+      "startDate": "2025-11-08",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "pip",
+          "name": "皮普・銅葉",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [
+            {
+              "name": "吟遊詩人",
+              "level": 4,
+              "subclass": "逸聞學院"
+            }
+          ],
+          "background": "藝人",
+          "ancestry": "森林地侏",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "asher",
+          "name": "艾舍",
+          "player": "青禾",
+          "mine": false,
+          "classes": [
+            {
+              "name": "法師",
+              "level": 4,
+              "subclass": "塑能學派"
+            }
+          ],
+          "background": "學者",
+          "ancestry": "人類",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "每隔七年開門一次的機械花園，今年提早開了。園丁正在尋找一首能讓花朵重新記起四季的歌。",
+      "sessions": [
+        {
+          "id": "clockwork-garden-s1",
+          "date": "2025-11-08",
+          "title": "沒有季節的庭院",
+          "summary": "機械鳥只會重複最後聽見的一句話。皮普循著旋律找到停擺的溫室，也發現園丁早已不記得自己的名字。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "rain-station",
+      "title": "雨停以前",
+      "system": "coc",
+      "systemName": "",
+      "edition": "第七版 · 現代",
+      "role": "played",
+      "gm": "小鹿",
+      "status": "active",
+      "startDate": "2026-07-11",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "lin",
+          "name": "林予安",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "記者",
+          "attributes": {
+            "STR": 45,
+            "CON": 55,
+            "SIZ": 50,
+            "DEX": 65,
+            "APP": 60,
+            "INT": 75,
+            "POW": 60,
+            "EDU": 70
+          },
+          "skills": [
+            {
+              "name": "圖書館使用",
+              "value": 70
+            },
+            {
+              "name": "偵查",
+              "value": 65
+            },
+            {
+              "name": "聆聽",
+              "value": 50
+            },
+            {
+              "name": "說服",
+              "value": 60
+            },
+            {
+              "name": "攝影",
+              "value": 55
+            }
+          ],
+          "notes": "隨身帶著一本被雨水泡皺的筆記簿。想查清楚三年前未能刊出的那篇報導。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "zhou",
+          "name": "周明",
+          "player": "青禾",
+          "mine": false,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "刑警",
+          "attributes": {
+            "STR": 65,
+            "CON": 60,
+            "SIZ": 65,
+            "DEX": 55,
+            "APP": 45,
+            "INT": 65,
+            "POW": 55,
+            "EDU": 65
+          },
+          "skills": [
+            {
+              "name": "偵查",
+              "value": 70
+            },
+            {
+              "name": "聆聽",
+              "value": 60
+            }
+          ],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "山城連續下了十三天的雨。地方報社收到一張明天的車票，票根上印著調查員的名字。",
+      "sessions": [
+        {
+          "id": "rain-station-s1",
+          "date": "2026-07-11",
+          "title": "末班車的乘客",
+          "summary": "月台上只有三個人，售票員卻說今晚已賣出四張車票。林予安拍下候車室的時鐘，沖出的照片上，指針與現場相差整整一天。",
+          "url": ""
+        },
+        {
+          "id": "rain-station-s2",
+          "date": "2026-07-25",
+          "title": "窗外的舊報社",
+          "summary": "列車駛過一間早已拆除的報社。周明在車窗反光裡看見失蹤同事，當他回頭，座位上只剩一份未乾的報紙。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "last-exhibition",
+      "title": "最後一次展覽",
+      "system": "coc",
+      "systemName": "",
+      "edition": "第七版 · 1920 年代",
+      "role": "played",
+      "gm": "阿嵐",
+      "status": "completed",
+      "startDate": "2026-02-14",
+      "endDate": "2026-02-21",
+      "characters": [
+        {
+          "id": "shen",
+          "name": "沈若衡",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "古物學家",
+          "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "SIZ": 55,
+            "DEX": 50,
+            "APP": 65,
+            "INT": 80,
+            "POW": 70,
+            "EDU": 80
+          },
+          "skills": [
+            {
+              "name": "圖書館使用",
+              "value": 80
+            },
+            {
+              "name": "偵查",
+              "value": 55
+            },
+            {
+              "name": "聆聽",
+              "value": 40
+            },
+            {
+              "name": "歷史",
+              "value": 75
+            },
+            {
+              "name": "神秘學",
+              "value": 60
+            }
+          ],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "一位收藏家把畢生藏品交給陌生人展出，唯一的條件是閉館以後不能數畫的數量。",
+      "sessions": [
+        {
+          "id": "last-exhibition-s1",
+          "date": "2026-02-14",
+          "title": "多出來的畫框",
+          "summary": "展場平面圖畫著十二個展位，清點表卻只有十一件作品。沈若衡注意到所有畫作的天空都有同一扇窗。",
+          "url": ""
+        },
+        {
+          "id": "last-exhibition-s2",
+          "date": "2026-02-21",
+          "title": "熄燈之後",
+          "summary": "我們把失蹤館員的名字寫回展冊。最後一面畫框空了，正門的鎖也終於能轉動；沈若衡決定不帶走任何藏品。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "tide-echo",
+      "title": "潮聲之外",
+      "system": "coc",
+      "systemName": "",
+      "edition": "第七版 · 現代",
+      "role": "played",
+      "gm": "霧舟",
+      "status": "completed",
+      "startDate": "2025-10-18",
+      "endDate": "2025-10-18",
+      "characters": [
+        {
+          "id": "chen",
+          "name": "陳以澈",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "醫師",
+          "attributes": {
+            "STR": 50,
+            "CON": 60,
+            "SIZ": 60,
+            "DEX": 55,
+            "APP": 50,
+            "INT": 70,
+            "POW": 65,
+            "EDU": 85
+          },
+          "skills": [
+            {
+              "name": "圖書館使用",
+              "value": 60
+            },
+            {
+              "name": "偵查",
+              "value": 45
+            },
+            {
+              "name": "聆聽",
+              "value": 65
+            },
+            {
+              "name": "醫學",
+              "value": 80
+            },
+            {
+              "name": "急救",
+              "value": 70
+            }
+          ],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "小漁村的居民開始在同一天做同一個夢。診所的病歷裡，卻找不到任何人曾經失眠的紀錄。",
+      "sessions": [
+        {
+          "id": "tide-echo-s1",
+          "date": "2025-10-18",
+          "title": "沒有人失眠的村子",
+          "summary": "診所的夜班護士說，病人都在凌晨三點醒來。陳以澈留下觀察，發現病房裡的每個人都在夢中低聲數著潮汐。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "lantern-river",
+      "title": "渡燈人",
+      "system": "other",
+      "systemName": "Heart of Wulin",
+      "edition": "武俠敘事",
+      "role": "played",
+      "gm": "青禾",
+      "status": "active",
+      "startDate": "2026-08-01",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "ye",
+          "name": "葉照晚",
+          "player": "奈羅",
+          "mine": true,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "背著一盞從未熄滅的燈，尋找讓師父留在江上的理由。",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "江上的每盞燈，都是一段未曾說完的告別。",
+      "sessions": [
+        {
+          "id": "lantern-river-s1",
+          "date": "2026-08-01",
+          "title": "借一盞燈",
+          "summary": "在渡口，我們遇到一個不肯說出目的地的客人。葉照晚答應帶他過河，條件是聽他說完一個故事。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "blacktower",
+      "title": "黑塔的第十三扇門",
+      "system": "dnd",
+      "systemName": "",
+      "edition": "5e · 2014",
+      "role": "gm",
+      "gm": "奈羅",
+      "status": "active",
+      "startDate": "2026-05-09",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "mira",
+          "name": "米菈",
+          "player": "青禾",
+          "mine": false,
+          "classes": [
+            {
+              "name": "遊蕩者",
+              "level": 5,
+              "subclass": "奧法詭術師"
+            }
+          ],
+          "background": "罪犯",
+          "ancestry": "提夫林",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "orin",
+          "name": "歐林",
+          "player": "小鹿",
+          "mine": false,
+          "classes": [
+            {
+              "name": "牧師",
+              "level": 5,
+              "subclass": "光明領域"
+            }
+          ],
+          "background": "侍僧",
+          "ancestry": "人類",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "nox",
+          "name": "諾克斯",
+          "player": "阿嵐",
+          "mine": false,
+          "classes": [
+            {
+              "name": "戰士",
+              "level": 5,
+              "subclass": "戰鬥大師"
+            }
+          ],
+          "background": "士兵",
+          "ancestry": "半獸人",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "城裡每座門通向同一座黑塔。冒險者必須在城鎮失去出口之前，找到從未被打開的第十三扇門。",
+      "sessions": [
+        {
+          "id": "blacktower-s1",
+          "date": "2026-05-09",
+          "title": "門後的訪客",
+          "summary": "隊伍選擇先調查木匠失蹤案，並說服旅店老闆保留後門。原本預定的街頭追逐，轉為一場緊張的夜間守候。",
+          "url": ""
+        },
+        {
+          "id": "blacktower-s2",
+          "date": "2026-05-23",
+          "title": "把名字交給塔",
+          "summary": "米菈不願拿村民的名字交換鑰匙，提出用自己的秘密作抵押。守門人同意了，但要求歐林成為交易的見證人。",
+          "url": ""
+        },
+        {
+          "id": "blacktower-s3",
+          "date": "2026-06-06",
+          "title": "仍然有人記得",
+          "summary": "玩家帶回了木匠，也得知開門並非唯一的出口。諾克斯留下修復旅店，讓隊伍第一次有了能安心過夜的地方。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "summer-island",
+      "title": "夏末群島",
+      "system": "dnd",
+      "systemName": "",
+      "edition": "5e · 2024",
+      "role": "gm",
+      "gm": "奈羅",
+      "status": "completed",
+      "startDate": "2026-01-10",
+      "endDate": "2026-01-24",
+      "characters": [
+        {
+          "id": "rose",
+          "name": "蘿絲",
+          "player": "霧舟",
+          "mine": false,
+          "classes": [
+            {
+              "name": "遊俠",
+              "level": 3,
+              "subclass": "獵人"
+            }
+          ],
+          "background": "化外之民",
+          "ancestry": "半精靈",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "tim",
+          "name": "提姆",
+          "player": "青禾",
+          "mine": false,
+          "classes": [
+            {
+              "name": "吟遊詩人",
+              "level": 3,
+              "subclass": "逸聞學院"
+            }
+          ],
+          "background": "藝人",
+          "ancestry": "半身人",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "lara",
+          "name": "菈菈",
+          "player": "小鹿",
+          "mine": false,
+          "classes": [
+            {
+              "name": "德魯伊",
+              "level": 3,
+              "subclass": "月亮結社"
+            }
+          ],
+          "background": "隱士",
+          "ancestry": "木精靈",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "適合初次出海的短篇冒險。玩家跟著一隻迷路的海鳥，尋找只在夏末浮上海面的島嶼。",
+      "sessions": [
+        {
+          "id": "summer-island-s1",
+          "date": "2026-01-10",
+          "title": "會唱歌的海圖",
+          "summary": "隊伍從三份委託中選了護送海鳥。提姆即興編了一首船歌，意外成為與島民溝通的方式。",
+          "url": ""
+        },
+        {
+          "id": "summer-island-s2",
+          "date": "2026-01-24",
+          "title": "退潮時的禮物",
+          "summary": "玩家放棄帶走潮汐寶石，選擇請島民修復漁港。他們帶回了一張普通海圖，上面多了一條每年都能回訪的航線。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "night-radio",
+      "title": "深夜來電",
+      "system": "coc",
+      "systemName": "",
+      "edition": "第七版 · 現代",
+      "role": "gm",
+      "gm": "奈羅",
+      "status": "completed",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15",
+      "characters": [
+        {
+          "id": "hsu",
+          "name": "許文軒",
+          "player": "阿嵐",
+          "mine": false,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "廣播主持人",
+          "attributes": {
+            "STR": 45,
+            "CON": 50,
+            "SIZ": 55,
+            "DEX": 60,
+            "APP": 65,
+            "INT": 70,
+            "POW": 60,
+            "EDU": 75
+          },
+          "skills": [
+            {
+              "name": "聆聽",
+              "value": 75
+            },
+            {
+              "name": "說服",
+              "value": 65
+            }
+          ],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "chi",
+          "name": "紀言",
+          "player": "小鹿",
+          "mine": false,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "工程師",
+          "attributes": {
+            "STR": 50,
+            "CON": 55,
+            "SIZ": 60,
+            "DEX": 55,
+            "APP": 50,
+            "INT": 75,
+            "POW": 65,
+            "EDU": 80
+          },
+          "skills": [
+            {
+              "name": "電器維修",
+              "value": 70
+            },
+            {
+              "name": "圖書館使用",
+              "value": 60
+            }
+          ],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "停播十年的電台，在今晚播出了聽眾尚未打進來的電話。",
+      "sessions": [
+        {
+          "id": "night-radio-s1",
+          "date": "2026-08-15",
+          "title": "請不要掛斷",
+          "summary": "兩名調查員選擇接起最後一通來電。他們沒有找出聲音的來源，卻讓困在錄音中的求救者第一次聽見回應。",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "railway-sunset",
+      "title": "落日鐵道",
+      "system": "other",
+      "systemName": "Savage Worlds",
+      "edition": "Adventure Edition",
+      "role": "gm",
+      "gm": "奈羅",
+      "status": "planned",
+      "startDate": "",
+      "endDate": "",
+      "characters": [
+        {
+          "id": "june",
+          "name": "瓊",
+          "player": "霧舟",
+          "mine": false,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "一名揹著舊藥箱的流浪醫師。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "rex",
+          "name": "雷克斯",
+          "player": "阿嵐",
+          "mine": false,
+          "classes": [],
+          "background": "",
+          "ancestry": "",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "聲稱退休、卻從不放下槍套的賞金獵人。",
+          "sheetUrl": ""
+        }
+      ],
+      "description": "一班沒有終點站的列車，載著最後一批願意穿越荒野的旅客。預計以三回完成的西部冒險。",
+      "sessions": []
+    }
+  ]
+}
