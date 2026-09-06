@@ -555,23 +555,23 @@
           "portraitAlt": "",
           "color": "#375963",
           "ancestry": "提夫林",
-          "background": "",
+          "background": "士兵(軍需官)",
           "classes": [
             {
               "name": "法師",
               "level": 3,
-              "subclass": ""
+              "subclass": "書士學派"
             },
             {
               "name": "牧師",
               "level": 2,
-              "subclass": ""
+              "subclass": "和平領域"
             }
           ],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "",
+          "notes": "寬容是名魔鬼血統特別突出的提夫林。他從原野的偏鄉來博德之門討生活。\n原本只是入焰拳運用年輕時學習過的法師法術做文書工作，但卻漸漸陷入組織的腐敗，深入黑暗面後，沉溺其中。\n\n心中雖不安，但已經知道太多不該知道的事，只能繼續同流合汙。\n為了讓自己好過一些，總是將不義之財大方揮霍，所以仍過著貧困的生活。",
           "sheetUrl": ""
         },
         {
@@ -652,7 +652,7 @@
           "portraitAlt": "",
           "color": "#375963",
           "ancestry": "龍裔",
-          "background": "V1:AB1  藝人",
+          "background": "藝人",
           "classes": [
             {
               "name": "吟遊詩人",
