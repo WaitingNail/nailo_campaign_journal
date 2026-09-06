@@ -14,10 +14,16 @@ if(/管理後台|#\/manage/.test(elements.app.innerHTML))throw new Error('Public
 if(!elements.app.innerHTML.includes('#/hall'))throw new Error('Public app is missing the all-character hall of fame.');
 const source=await readFile(new URL('dist/front.js',root),'utf8');
 if(!source.includes("allCharacters(data).filter(x=>x.character.mine)"))throw new Error('Character archive is not restricted to owned characters.');
-const {characters}=await import(new URL('dist/front.js',root));
+const {characters,hallOfFame}=await import(new URL('dist/front.js',root));
 const ownedCount=data.campaigns.flatMap(c=>c.characters).filter(character=>character.mine).length;
 const allCount=data.campaigns.flatMap(c=>c.characters).length;
+const playerCount=new Set(data.campaigns.flatMap(c=>c.characters).map(character=>character.player?.trim()||'未記錄玩家')).size;
 const optionCount=html=>(html.match(/role="option"/g)||[]).length;
 if(optionCount(characters(data))!==ownedCount)throw new Error('Character archive rendered a character that is not owned.');
-if(optionCount(characters(data,'',true))!==allCount)throw new Error('Hall of fame did not render every character.');
+const hall=hallOfFame(data);
+if((hall.match(/data-hall-character=/g)||[]).length!==allCount)throw new Error('Hall of fame did not render every character.');
+if((hall.match(/data-hall-player=/g)||[]).length!==playerCount)throw new Error('Hall of fame did not group characters by player.');
+if(hall.includes('character-stage')||hall.includes('role="option"'))throw new Error('Hall of fame still uses the character selector layout.');
+const css=await readFile(new URL('dist/front.css',root),'utf8');
+if(!css.includes('@keyframes characterPortraitInNext'))throw new Error('Character switching animation is missing.');
 console.log(`Public bundle booted with ${data.campaigns.length} campaigns and no admin link.`);
