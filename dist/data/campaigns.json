@@ -930,6 +930,348 @@
           "url": "https://docs.google.com/document/d/1JOTyT47d6P2N8rbVKxNeArpy2mfVDYLNqLcY3RNQMIg/edit?tab=t.0#heading=h.haz2m463fmp9"
         }
       ]
+    },
+    {
+      "id": "5b0a1e5d-9c8c-4321-85e1-d322a3b7f938",
+      "title": "人間地獄",
+      "role": "played",
+      "system": "coc",
+      "systemName": "",
+      "gm": "洪偉",
+      "edition": "7e",
+      "cover": "./assets/campaigns/9519c15e90f645c2b688c681ed615dda.webp",
+      "coverAlt": "",
+      "status": "completed",
+      "startDate": "2025-08-03",
+      "endDate": "2026-03-15",
+      "description": "一群受到嘉義縣文化觀光局委託的專業調查員，針對民雄鄉「安靈園」的古蹟價值進行評估，並協助化解爭議。過程中捲入了當地大家族過往的糾葛之中。",
+      "characters": [
+        {
+          "id": "3fedcfb1-c045-4344-af0c-19559f46cbfc",
+          "name": "林采薇",
+          "player": "奈羅",
+          "mine": true,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "記者",
+          "attributes": {
+            "STR": 45,
+            "CON": 50,
+            "SIZ": 50,
+            "DEX": 65,
+            "APP": 65,
+            "INT": 50,
+            "POW": 65,
+            "EDU": 74
+          },
+          "skills": [
+            {
+              "name": "藝術(表演)",
+              "value": 25
+            },
+            {
+              "name": "魅力",
+              "value": 60
+            },
+            {
+              "name": "信用評級",
+              "value": 20
+            },
+            {
+              "name": "克蘇魯神話",
+              "value": 8
+            },
+            {
+              "name": "急救",
+              "value": 50
+            },
+            {
+              "name": "歷史",
+              "value": 60
+            },
+            {
+              "name": "母語",
+              "value": 75
+            },
+            {
+              "name": "聆聽",
+              "value": 65
+            },
+            {
+              "name": "說服",
+              "value": 40
+            },
+            {
+              "name": "心理學",
+              "value": 65
+            },
+            {
+              "name": "識破",
+              "value": 65
+            },
+            {
+              "name": "隱匿",
+              "value": 55
+            },
+            {
+              "name": "追蹤",
+              "value": 40
+            }
+          ],
+          "notes": "畢業於台灣大學歷史系後，加入了獨立媒體《視域》。在這裡，她學會了如何追蹤消息來源、躲避視線、分辨謊言中的真相。母親在她七歲時神秘失蹤，但警方卻以「失聯」結案。她對異常事件的執著是為了尋找母親失蹤真相。為了掩護自己的調查，她開設了一個YouTube頻道《古蹟探秘》。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "82d1bb9f-26d5-4851-a3e3-cde2931c77ad",
+          "name": "翁家培",
+          "player": "朱朱",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "研究者",
+          "attributes": {
+            "STR": 50,
+            "CON": 50,
+            "SIZ": 55,
+            "DEX": 55,
+            "APP": 65,
+            "INT": 70,
+            "POW": 60,
+            "EDU": 76
+          },
+          "skills": [
+            {
+              "name": "人類學",
+              "value": 63
+            },
+            {
+              "name": "鑑定",
+              "value": 40
+            },
+            {
+              "name": "考古學",
+              "value": 40
+            },
+            {
+              "name": "藝術(攝影)",
+              "value": 50
+            },
+            {
+              "name": "魅力",
+              "value": 40
+            },
+            {
+              "name": "信用評級",
+              "value": 15
+            },
+            {
+              "name": "閃避",
+              "value": 27
+            },
+            {
+              "name": "歷史",
+              "value": 65
+            },
+            {
+              "name": "英語",
+              "value": 38
+            },
+            {
+              "name": "日語",
+              "value": 40
+            },
+            {
+              "name": "母語",
+              "value": 76
+            },
+            {
+              "name": "圖書館使用",
+              "value": 50
+            },
+            {
+              "name": "識破",
+              "value": 41
+            }
+          ],
+          "notes": "政大台史所碩生，嘉義民雄鵝肉店第三代。\n\n這次受文化局邀請參與「安靈園」古蹟價值評估，是他教授主持的合作計畫案，同時也是他碩士論文的實地研究主軸，調查是否順利將直接影響他能否如期畢業。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "c5ab6756-8008-4dc6-9169-9ef6eb554fb0",
+          "name": "季然",
+          "player": "阿馨",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "通靈學家",
+          "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "SIZ": 50,
+            "DEX": 40,
+            "APP": 50,
+            "INT": 80,
+            "POW": 75,
+            "EDU": 75
+          },
+          "skills": [
+            {
+              "name": "人類學",
+              "value": 40
+            },
+            {
+              "name": "藝術(攝影)",
+              "value": 21
+            },
+            {
+              "name": "信用評級",
+              "value": 30
+            },
+            {
+              "name": "克蘇魯神話",
+              "value": 5
+            },
+            {
+              "name": "閃避",
+              "value": 30
+            },
+            {
+              "name": "話術",
+              "value": 45
+            },
+            {
+              "name": "急救",
+              "value": 20
+            },
+            {
+              "name": "語言(拉丁語)",
+              "value": 26
+            },
+            {
+              "name": "圖書館使用",
+              "value": 60
+            },
+            {
+              "name": "聆聽",
+              "value": 60
+            },
+            {
+              "name": "神祕學",
+              "value": 60
+            },
+            {
+              "name": "說服",
+              "value": 70
+            },
+            {
+              "name": "心理學",
+              "value": 75
+            },
+            {
+              "name": "識破",
+              "value": 60
+            }
+          ],
+          "notes": "多年前在進行工業遺址的田野調查時遭遇了某種怪異現象\n之後她的研究轉向「民俗心理學與超常現象研究」，對超常現象的好奇和科學研究形式形成了她內心主要的矛盾與動力",
+          "sheetUrl": ""
+        },
+        {
+          "id": "6a765572-864a-4b84-a08a-9ffc57dc9f12",
+          "name": "金豪冶",
+          "player": "Mori",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "古董商",
+          "attributes": {
+            "STR": 35,
+            "CON": 65,
+            "SIZ": 70,
+            "DEX": 55,
+            "APP": 65,
+            "INT": 70,
+            "POW": 45,
+            "EDU": 69
+          },
+          "skills": [
+            {
+              "name": "會計",
+              "value": 45
+            },
+            {
+              "name": "鑑定",
+              "value": 70
+            },
+            {
+              "name": "藝術(偽造)",
+              "value": 40
+            },
+            {
+              "name": "魅力",
+              "value": 26
+            },
+            {
+              "name": "信用評級",
+              "value": 50
+            },
+            {
+              "name": "克蘇魯神話",
+              "value": 9
+            },
+            {
+              "name": "話術",
+              "value": 70
+            },
+            {
+              "name": "歷史",
+              "value": 50
+            },
+            {
+              "name": "英語",
+              "value": 34
+            },
+            {
+              "name": "母語",
+              "value": 69
+            },
+            {
+              "name": "聆聽",
+              "value": 45
+            },
+            {
+              "name": "心理學",
+              "value": 40
+            },
+            {
+              "name": "巧手",
+              "value": 30
+            },
+            {
+              "name": "識破",
+              "value": 55
+            }
+          ],
+          "notes": "在民雄經營古董店多年，人稱金老闆。\n\n以自身的眼光買賣古董賺取價差，但有時候也會用贗品掉包真貨圖利。選擇賣假貨對象時十分小心，至今還未被抓到。在當地有不錯的人脈與名聲，也是這次被觀光局邀請的原因。",
+          "sheetUrl": ""
+        }
+      ],
+      "sessions": []
     }
   ]
 }
