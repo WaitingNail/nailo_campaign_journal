@@ -35,11 +35,11 @@ const owned=colorData.campaigns.flatMap(c=>c.characters.map(character=>({campaig
 if(!owned)throw new Error('Fixture needs at least one owned character.');
 owned.character.color='#123456';
 const characterHtml=characters(colorData);
-if(!characterHtml.includes('--selected-character-color:#123456')||!characterHtml.includes('--portrait-bg:#123456'))throw new Error('Character archive did not apply the stored character color.');
+if(characterHtml.includes('--selected-character-color:')||!characterHtml.includes('class="character-stage-bg" data-label="MY CHARACTERS" style="--portrait-bg:#123456"'))throw new Error('Character archive did not retain the previous backdrop structure.');
 const css=await readFile(new URL('dist/front.css',root),'utf8');
 if(!css.includes('@keyframes characterPortraitInNext'))throw new Error('Character switching animation is missing.');
 if(!css.includes('.campaign-cover{')||!css.includes('object-fit:cover'))throw new Error('Campaign cover is not configured as a full-bleed image.');
 if(!css.includes('.story-head .status{')||!css.includes('background:#2f765a;color:#fff'))throw new Error('Story status badge contrast styles are missing.');
-if(!css.includes('.portrait-feature{height:100%;min-height:620px;background:var(--portrait-bg,#375963)'))throw new Error('Character feature card does not use the stored background color.');
-if(!css.includes('.selector-card>span{position:absolute;left:-4px;right:-4px;bottom:-4px'))throw new Error('Character selector label does not cover the card edge.');
+if(!css.includes('.portrait-feature{height:100%;min-height:620px;background:transparent'))throw new Error('Character feature card did not return to the previous transparent layout.');
+if(!css.includes('.selector-card>span{position:absolute;left:0;right:0;bottom:0'))throw new Error('Character selector label did not return to the previous alignment.');
 console.log(`Public bundle booted with ${data.campaigns.length} campaigns and no admin link.`);
