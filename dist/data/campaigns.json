@@ -819,6 +819,117 @@
         }
       ],
       "sessions": []
+    },
+    {
+      "id": "2cdc786d-ca7a-4fbe-8e42-bde8a71b54e1",
+      "title": "橋九隊",
+      "role": "played",
+      "system": "other",
+      "systemName": "寰宇 Cosmere",
+      "gm": "朱朱",
+      "edition": "",
+      "cover": "./assets/campaigns/2289dfff3ff5429bbaa316a642e49bb8.webp",
+      "coverAlt": "",
+      "status": "active",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "description": "一群橋兵帶著本不該出現在這裡的學者與光淑們，前往研究裂谷下的古代遺跡",
+      "characters": [
+        {
+          "id": "6a9ab7ae-c69c-4914-a46a-d3cb1ebcf5d2",
+          "name": "橋馬里",
+          "player": "奈羅",
+          "mine": true,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "你在雷熙群島長大,從小便夢想著踏上冒險。後來,你偷偷躲上一艘商船,終於如願展開旅程。一路上,你只偷取維持生存所需的東西,並為了尋找機會,輾轉來到破碎平原。然而,你不慎偷錯不好惹的光淑,此後你便被迫徵召為橋\n兵。\n你渴望重獲自由,但若想贖回自己的契約、擺脫勞役之身,必須支付 200 馬克!如今,你暗中策劃其他逃脫方法,\n好再次成為自己故事裡的英雄。\n你對橋九隊的其他成員仍有幾分情義,其中包括年長的多拉爾、與你年紀相仿的少年亞蘭、曾是長矛兵的凱許,以及一位名叫維德的中年老兵。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "fe8545d6-6663-4c91-bf23-b5119fdce16b",
+          "name": "阿貝娜",
+          "player": "Jackle",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "你的童年在亞西須帝國度過,居住於首\n都亞西米爾。你自幼便被教導要敬重國\n家縝密的官僚體系與複雜的法律制度,\n然而,擔任法警的經歷卻逐漸令你心灰\n意冷。你太常看見掌權者躲在法律背後\n,任由無辜之人受苦。\n為了尋求嶄新的人生,你向東來到破碎\n平原,並找到一份斥候的工作。你很享\n受探索各處高原的過程,但戰營中的生\n活十分殘酷。你也發現,雅烈席卡的平\n民百姓受到的壓迫,甚至比你故鄉的人\n民更加嚴重。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "bd47a061-d370-4805-8036-907942f0b02f",
+          "name": "塔拉妮",
+          "player": "山姆",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "身為一名執徒,你已將一生奉獻給弗林教,並立下安貧與奉獻的誓言。你被派往光淑伊莉雅·馬塔的家族,隨後一同前往破碎平原。雅烈席人的軍隊正在那裡對帕山迪人發動復仇之戰。\n你所受的訓練,足以指導士兵進行戰鬥鍛鍊,也能協助學者進行研究。\n你很珍惜這個機會,既能為教團服務,也能探索自身認同的兩個面向。然而,你曾深入研究帕山迪人的文化,因此開始質疑人類為何非得征服他們不可。儘管你的信仰推崇戰爭中的勝利,你仍暗自祈求這場戰爭能夠和平落幕。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "5766b1f4-0676-4999-8321-aee45c94d1e2",
+          "name": "維德",
+          "player": "小胤",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "你是身敗名裂的雅烈席士兵,如今淪落在橋隊服役。隊伍裡只有一人比你加入得更早,而你也已逐漸認命:你這輩子無法離開橋隊。\n你幾乎放棄會有好轉的希望。然而不久前,你幫助一名年輕橋兵逃出戰營。那段經歷讓你感覺重新找回過去小部分的自己。\n此後,你偶爾會看見奇異的光芒從身旁飛掠而過。在那時,你都感到自己變得更加強大,也更加堅定。\n你認為自己有責任照顧隊伍中的其他成員,其中包括一名叫多拉爾的老人,以及一名來自雷熙、名叫喬瑪里的少年。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "2e402d0a-3ad4-4a0e-831a-4c5986e3ac9e",
+          "name": "茲紋妲",
+          "player": "雪喵",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "你是來自商業王國賽勒納的科學家。你在弗瑞茲托公會擔任了多年的低階學徒,之後前往破碎平原,成為薩迪雅斯領地一位名叫伊萊雅・馬塔的雅烈席卡學者所監護的門生。\n馬塔女士鼓勵你研究歷史與考古學,但你真正的目標,是深入了解那些以颶光驅動、被稱為「法器」的裝置。你希望有朝一日能成為法器師,汲取過往的經驗,開創未來的嶄新設計。",
+          "sheetUrl": ""
+        }
+      ],
+      "sessions": [
+        {
+          "id": "904e6adf-b08f-4b4d-965e-1c58d45217b0",
+          "title": "橋九隊",
+          "date": "2026-08-09",
+          "summary": "",
+          "url": "https://docs.google.com/document/d/1JOTyT47d6P2N8rbVKxNeArpy2mfVDYLNqLcY3RNQMIg/edit?tab=t.0#heading=h.haz2m463fmp9"
+        }
+      ]
     }
   ]
 }
