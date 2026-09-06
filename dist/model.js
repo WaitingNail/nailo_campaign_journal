@@ -28,7 +28,8 @@ export function validateData(data){
   if(!c||!txt(c.id,100)||!c.id||ids.has(c.id)||!/^[a-zA-Z0-9_-]+$/.test(c.id))fail(`${where}的 id 無效或重複。`);ids.add(c.id);
   if(!['played','gm'].includes(c.role)||!SYSTEMS[c.system]||!STATUSES[c.status])fail(`${where}的身分、系統或狀態無效。`);
   for(const k of ['title','gm'])if(!txt(c[k],180)||!c[k].trim())fail(`${where}的${k==='title'?'劇本名稱':'GM'}不可空白。`);
-  for(const k of ['edition','systemName','description'])if(c[k]!==undefined&&!txt(c[k],k==='description'?20000:200))fail(`${where}的 ${k} 格式不正確。`);
+  for(const k of ['edition','systemName','description','coverAlt'])if(c[k]!==undefined&&!txt(c[k],k==='description'?20000:200))fail(`${where}的 ${k} 格式不正確。`);
+  if(c.cover!==undefined&&c.cover!==''&&!safeImageSrc(c.cover))fail(`${where}的團務封面格式不正確。請使用 PNG、WebP、JPG 網址或網站內的 assets/images 路徑。`);
   if(!date(c.startDate)||!date(c.endDate))fail(`${where}的日期格式不正確。`);
   if(c.startDate&&c.endDate&&c.endDate<c.startDate)fail(`${where}的結束日期不可早於開始日期。`);
   if(!Array.isArray(c.characters)||c.characters.length>100||!Array.isArray(c.sessions)||c.sessions.length>2000)fail(`${where}的角色或回次清單不正確。`);

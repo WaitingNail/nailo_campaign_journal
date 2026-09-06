@@ -2,7 +2,7 @@
 
 部署於 GitHub Pages 的唯讀團務網誌，包含首頁、團務誌、具選角切換效果且只收錄本人角色的角色名鑑、依玩家分組收錄全體角色的冒險者名人堂、冒險統計與各團篇章頁。
 
-公開資料位於 `dist/data/campaigns.json`，角色立繪放在 `dist/assets/characters/`。前台不包含管理頁面或後台連結；資料由獨立管理站發布。
+公開資料位於 `dist/data/campaigns.json`，角色立繪放在 `dist/assets/characters/`，團務封面放在 `dist/assets/campaigns/`。前台不包含管理頁面或後台連結；資料由獨立管理站發布。
 
 ## GitHub Pages
 
