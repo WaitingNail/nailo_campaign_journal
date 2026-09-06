@@ -503,6 +503,142 @@
         }
       ],
       "sessions": []
+    },
+    {
+      "id": "d4c9c408-e32c-47a3-972e-29cc30c7e312",
+      "title": "墜入阿弗納斯",
+      "role": "gm",
+      "system": "dnd",
+      "systemName": "",
+      "gm": "奈羅",
+      "edition": "5e",
+      "status": "active",
+      "startDate": "",
+      "endDate": "",
+      "description": "柏德之門口迎來一群埃爾托瑞爾的難民，到底發生了什麼事呢?",
+      "characters": [
+        {
+          "id": "4cd0f50c-aaba-4df7-b410-c97388ed8a91",
+          "name": "寬容",
+          "player": "朱朱",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "提夫林",
+          "background": "",
+          "classes": [
+            {
+              "name": "法師",
+              "level": 3,
+              "subclass": ""
+            },
+            {
+              "name": "牧師",
+              "level": 2,
+              "subclass": ""
+            }
+          ],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "592316b6-0973-4933-8247-0803d7c9d2c7",
+          "name": "傑斯提斯．巴塔善",
+          "player": "丹丹",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "提夫林",
+          "background": "",
+          "classes": [
+            {
+              "name": "契術師",
+              "level": 5,
+              "subclass": "深海領主"
+            }
+          ],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "bf98bf4f-2bd4-4211-9ae0-591d4fcbfdf0",
+          "name": "小黃/邦邦",
+          "player": "鍋子",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "聖飛象",
+          "background": "",
+          "classes": [
+            {
+              "name": "牧師",
+              "level": 5,
+              "subclass": ""
+            }
+          ],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "6e5db41c-6c9e-4ca1-8019-6106d5763fcd",
+          "name": "奧策安",
+          "player": "柚音",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "精靈",
+          "background": "",
+          "classes": [
+            {
+              "name": "聖騎士",
+              "level": 5,
+              "subclass": ""
+            }
+          ],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "aa041611-aa01-465b-9e1c-8919fd7a8f93",
+          "name": "奏戀",
+          "player": "小魚",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "龍裔",
+          "background": "",
+          "classes": [
+            {
+              "name": "吟遊詩人",
+              "level": 5,
+              "subclass": ""
+            }
+          ],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        }
+      ],
+      "sessions": []
     }
   ]
 }
