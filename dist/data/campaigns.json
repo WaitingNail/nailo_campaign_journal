@@ -1272,6 +1272,344 @@
         }
       ],
       "sessions": []
+    },
+    {
+      "id": "06c9edff-e091-44f4-9019-0f97a7094b60",
+      "title": "美麗",
+      "role": "played",
+      "system": "coc",
+      "systemName": "",
+      "gm": "朱朱",
+      "edition": "7e",
+      "cover": "./assets/campaigns/a4b5e313fa2940b89ef85ffb2d98938b.webp",
+      "coverAlt": "",
+      "status": "completed",
+      "startDate": "2026-08-02",
+      "endDate": "2026-08-02",
+      "description": "1996年七月，一位自稱吳美麗的女性委託你們其中一個人，去海岸鎮幫她找到一個人，確認他安好，那是當年因為各種原因而過繼給別人收養的兒子。\n\n而那天，賀伯颱風即將登陸，有些人忘不了過去的事，而有些人似乎剛想起來......",
+      "characters": [
+        {
+          "id": "8f28ab49-d78f-4957-970e-87106ad3d73a",
+          "name": "廖振聲",
+          "player": "奈羅",
+          "mine": true,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "銷售員",
+          "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "SIZ": 75,
+            "DEX": 50,
+            "APP": 45,
+            "INT": 65,
+            "POW": 90,
+            "EDU": 67
+          },
+          "skills": [
+            {
+              "name": "會計",
+              "value": 40
+            },
+            {
+              "name": "魅力",
+              "value": 34
+            },
+            {
+              "name": "信用評級",
+              "value": 20
+            },
+            {
+              "name": "克蘇魯神話",
+              "value": 5
+            },
+            {
+              "name": "開車",
+              "value": 40
+            },
+            {
+              "name": "話術",
+              "value": 60
+            },
+            {
+              "name": "歷史",
+              "value": 60
+            },
+            {
+              "name": "威脅",
+              "value": 20
+            },
+            {
+              "name": "聆聽",
+              "value": 20
+            },
+            {
+              "name": "醫藥",
+              "value": 31
+            },
+            {
+              "name": "說服",
+              "value": 40
+            },
+            {
+              "name": "心理學",
+              "value": 40
+            },
+            {
+              "name": "識破",
+              "value": 35
+            },
+            {
+              "name": "隱匿",
+              "value": 40
+            }
+          ],
+          "notes": "廖振聲，四十歲，台中地下電台《成功之聲》的主持人。因為總把「成功」兩字掛在嘴邊，認識他的人都叫他「成功仔」。\n《成功之聲》表面上是一檔時事雜談與聽眾叩應節目，實際上則靠著保健食品、藥酒與各種來路不明的藥品工商維持營運。成功仔熟悉地方新聞、歷史傳聞與市井人情，能從政治講到鬼故事，再毫無痕跡地把話題繞回今日推薦的藥品。他未必真的討人喜歡，卻很懂得如何讓人繼續聽下去，這也是他每次被債主抓到都可以成功再拖下去的原因。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "f1124dde-9200-41f1-a116-d41c7b1b888d",
+          "name": "蘇福平",
+          "player": "丹丹",
+          "mine": false,
+          "portrait": "",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "酒保",
+          "attributes": {
+            "STR": 50,
+            "CON": 45,
+            "SIZ": 60,
+            "DEX": 45,
+            "APP": 60,
+            "INT": 60,
+            "POW": 75,
+            "EDU": 60
+          },
+          "skills": [
+            {
+              "name": "魅力",
+              "value": 50
+            },
+            {
+              "name": "信用評級",
+              "value": 25
+            },
+            {
+              "name": "偽裝",
+              "value": 40
+            },
+            {
+              "name": "閃避",
+              "value": 43
+            },
+            {
+              "name": "話術",
+              "value": 50
+            },
+            {
+              "name": "戰鬥(鬥毆)",
+              "value": 56
+            },
+            {
+              "name": "火器(手槍)",
+              "value": 24
+            },
+            {
+              "name": "急救",
+              "value": 30
+            },
+            {
+              "name": "威脅",
+              "value": 40
+            },
+            {
+              "name": "聆聽",
+              "value": 40
+            },
+            {
+              "name": "機械維修",
+              "value": 50
+            },
+            {
+              "name": "說服",
+              "value": 40
+            },
+            {
+              "name": "心理學",
+              "value": 34
+            },
+            {
+              "name": "識破",
+              "value": 50
+            }
+          ],
+          "notes": "背後有一顆星星與一朵桃花刺青。\n高中時期曾因為廖振聲在幫派混過一段時間，就讀汽修科。\n畢業後去迎春風擔任酒保，擅長義大利肉醬麵，但味道似乎和小時候的還差了那麼一點。",
+          "sheetUrl": ""
+        },
+        {
+          "id": "e7955df7-26d5-4040-8b07-fea541eed199",
+          "name": "林知微",
+          "player": "瑜",
+          "mine": false,
+          "portrait": "./assets/characters/80d503eb94c849028b01430924f53da7.webp",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "記者",
+          "attributes": {
+            "STR": 30,
+            "CON": 55,
+            "SIZ": 55,
+            "DEX": 45,
+            "APP": 60,
+            "INT": 55,
+            "POW": 30,
+            "EDU": 50
+          },
+          "skills": [
+            {
+              "name": "藝術(表演)",
+              "value": 30
+            },
+            {
+              "name": "藝術(攝影)",
+              "value": 30
+            },
+            {
+              "name": "信用評級",
+              "value": 30
+            },
+            {
+              "name": "克蘇魯神話",
+              "value": 5
+            },
+            {
+              "name": "閃避",
+              "value": 22
+            },
+            {
+              "name": "話術",
+              "value": 5
+            },
+            {
+              "name": "戰鬥(鬥毆)",
+              "value": 30
+            },
+            {
+              "name": "急救",
+              "value": 30
+            },
+            {
+              "name": "歷史",
+              "value": 50
+            },
+            {
+              "name": "聆聽",
+              "value": 55
+            },
+            {
+              "name": "說服",
+              "value": 50
+            },
+            {
+              "name": "心理學",
+              "value": 55
+            },
+            {
+              "name": "識破",
+              "value": 55
+            },
+            {
+              "name": "隱匿",
+              "value": 50
+            }
+          ],
+          "notes": "從小在金門長大, 喜歡四處拍照, 有時能拍出特別有感覺的照片.大學到台北唸了輔大新聞系, 畢業後花了一段時間找工作, 最後任職於自強早報的記者.目前高壓的工作環境靠著爺爺寄來的金門高粱頂替著.",
+          "sheetUrl": ""
+        },
+        {
+          "id": "3fb1b4cf-66b2-48e8-aaad-358fbdb6d8f2",
+          "name": "林宇涵",
+          "player": "阿菲",
+          "mine": false,
+          "portrait": "./assets/characters/c0fcd4f5e0be4e9b996593e2d02aa529.webp",
+          "portraitAlt": "",
+          "color": "#375963",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "學生/實習生",
+          "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "SIZ": 60,
+            "DEX": 60,
+            "APP": 55,
+            "INT": 75,
+            "POW": 45,
+            "EDU": 45
+          },
+          "skills": [
+            {
+              "name": "藝術(縫紉)",
+              "value": 40
+            },
+            {
+              "name": "藝術(美術)",
+              "value": 60
+            },
+            {
+              "name": "魅力",
+              "value": 50
+            },
+            {
+              "name": "信用評級",
+              "value": 10
+            },
+            {
+              "name": "急救",
+              "value": 30
+            },
+            {
+              "name": "英文",
+              "value": 30
+            },
+            {
+              "name": "圖書館使用",
+              "value": 65
+            },
+            {
+              "name": "聆聽",
+              "value": 55
+            },
+            {
+              "name": "說服",
+              "value": 40
+            },
+            {
+              "name": "心理學",
+              "value": 26
+            },
+            {
+              "name": "巧手",
+              "value": 40
+            }
+          ],
+          "notes": "就讀北藝大的美術系，平時喜愛畫漫畫、做娃娃相關的手工藝，固定會與同好們交流。雖然不缺錢，但偶爾會投稿自己的作品到自強早報，藉此嶄露自己的技藝。",
+          "sheetUrl": ""
+        }
+      ],
+      "sessions": []
     }
   ]
 }
