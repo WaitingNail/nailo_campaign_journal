@@ -1,5 +1,5 @@
 import {validateData,escapeHtml as e} from './model.js';
-import {frontShell,home,journal,characters,hallOfFame,story,stats,allCharacters,scrollSelected,scrollHallSelected} from './front.js';
+import {frontShell,home,journal,characters,story,stats,allCharacters,scrollSelected} from './front.js';
 
 const app=document.getElementById('app');
 let data,route={page:'home'},characterTransitionDirection=0,characterTransitionTimer=0;
@@ -9,7 +9,7 @@ function parseRoute(){
  const parts=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean);
  if(!parts.length)return{page:'home'};
  if(parts[0]==='journal')return{page:'journal',role:['all','played','gm'].includes(parts[1])?parts[1]:'all',system:['all','dnd','coc','other'].includes(parts[2])?parts[2]:'all'};
- if(['characters','hall'].includes(parts[0]))return{page:parts[0],key:parts.length>2?`${parts[1]}/${parts[2]}`:''};
+ if(parts[0]==='characters')return{page:parts[0],key:parts.length>2?`${parts[1]}/${parts[2]}`:''};
  if(parts[0]==='story')return{page:'story',id:parts[1]};
  if(parts[0]==='stats')return{page:'stats'};
  return{page:'not-found'};
@@ -20,7 +20,6 @@ function render(){
  if(route.page==='home')content=home(data);
  else if(route.page==='journal')content=journal(data,route.role,route.system);
  else if(route.page==='characters')content=characters(data,route.key);
- else if(route.page==='hall')content=hallOfFame(data,route.key);
  else if(route.page==='story')content=story(data,data.campaigns.find(c=>c.id===route.id));
  else if(route.page==='stats')content=stats(data);
  else content=`<section class="front-empty"><h1>找不到這一頁</h1><a class="front-button" href="#/">回到首頁</a></section>`;
@@ -33,8 +32,7 @@ function render(){
   }
   characterTransitionDirection=0;requestAnimationFrame(scrollSelected);
  }
- if(route.page==='hall'&&route.key)requestAnimationFrame(scrollHallSelected);
- const titles={home:'首頁',journal:'團務誌',characters:'角色名鑑',hall:'冒險者名人堂',stats:'冒險統計'};
+ const titles={home:'首頁',journal:'團務誌',characters:'角色名鑑',stats:'冒險統計'};
  const selected=data.campaigns.find(c=>c.id===route.id);
  document.title=`${selected?.title||titles[route.page]||'團務手記'} · ${data.ownerName}`;
 }
