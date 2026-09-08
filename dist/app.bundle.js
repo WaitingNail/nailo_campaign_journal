@@ -56,6 +56,7 @@ function validateData(data){
  return data;
 }
 
+
     return { SYSTEMS, STATUSES, ATTRS, COLORS, escapeHtml, safeUrl, safeImageSrc, level, party, ownCharacters, countBy, mean, buckets, getStats, validateData };
   })();
   __modules["./shared.js"] = (() => {
@@ -63,6 +64,7 @@ const { STATUSES, escapeHtml: e } = __modules["./model.js"];
 const paths={book:'<path d="M4 3h12a4 4 0 0 1 4 4v14H7a3 3 0 0 1-3-3V3Z"/><path d="M4 17h16M8 7h8M8 10h6"/>',arrow:'<path d="m9 5 7 7-7 7"/>',back:'<path d="m12 5-7 7 7 7M5 12h15"/>',link:'<path d="M14 3h7v7M21 3l-9 9M10 4H4v16h16v-6"/>'};
 const icon=name=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name]||paths.book}</svg>`;
 const status=campaign=>`<span class="status ${e(campaign.status)}">${STATUSES[campaign.status]}</span>`;
+
 
     return { icon, status };
   })();
@@ -78,9 +80,12 @@ const allCharacters=data=>data.campaigns.flatMap(c=>c.characters.map(p=>({campai
 const myCharacters=data=>allCharacters(data).filter(x=>x.character.mine);
 const characterHref=(c,p)=>`#/${p.mine?'characters':'hall'}/${portraitKey(c,p)}`;
 
-function portrait(c,p,variant='card'){
+function characterArrow(direction,variant,disabled=false){
+ return `<button type="button" class="character-arrow ${variant}-arrow ${direction}" data-action="char-${direction}" aria-label="${direction==='prev'?'上一位角色':'下一位角色'}"${disabled?' disabled':''}>${icon('arrow')}</button>`;
+}
+function portrait(c,p,variant='card',navigation=''){
  const src=safeImageSrc(p.portrait||''),color=characterColor(c,p);
- return `<div class="portrait portrait-${variant}" style="--portrait-bg:${color}">${src?`<img src="${e(src)}" alt="${e(p.portraitAlt||`${p.name}角色立繪`)}">`:`<div class="portrait-fallback" aria-label="${e(p.name)}尚未上傳立繪"><span>${e(p.name.slice(0,1))}</span><small>PORTRAIT</small></div>`}<span class="portrait-system">${e(systemName(c))}</span></div>`;
+ return `<div class="portrait portrait-${variant}" style="--portrait-bg:${color}">${src?`<img src="${e(src)}" alt="${e(p.portraitAlt||`${p.name}角色立繪`)}">`:`<div class="portrait-fallback" aria-label="${e(p.name)}尚未上傳立繪"><span>${e(p.name.slice(0,1))}</span><small>PORTRAIT</small></div>`}<span class="portrait-system">${e(systemName(c))}</span>${navigation}</div>`;
 }
 function publicNav(route){const active=name=>route.page===name?'active':'';return `<header class="public-header"><a href="#/" class="public-brand"><img src="./favicon.svg" alt=""><span><strong>奈羅的團務手記</strong><small>THE CAMPAIGN JOURNAL</small></span></a><nav class="public-nav" aria-label="前台導覽"><a href="#/" class="${active('home')}">首頁</a><a href="#/journal/all/all" class="${active('journal')||active('public-campaign')}">團務誌</a><a href="#/characters" class="${active('characters')}">角色名鑑</a><a href="#/hall" class="${active('hall')}">冒險者名人堂</a><a href="#/stats" class="${active('stats')}">冒險統計</a></nav></header>`}
 function frontShell(data,route,content,local=false){return `<div class="public-site">${publicNav(route)}<main id="main" class="public-main" tabindex="-1">${data.demo?`<div class="demo-ribbon">目前使用虛構示範資料，版面與功能可直接操作。</div>`:''}${content}</main><footer class="public-footer"><div><strong>奈羅的團務手記</strong><p>在骰聲停下以後，把故事留在這裡。</p></div><div><a href="#/journal/played/all">我跑過的團</a><a href="#/journal/gm/all">我帶過的團</a><a href="#/characters">角色名鑑</a><a href="#/hall">冒險者名人堂</a></div><span>© ${new Date().getFullYear()} ${e(data.ownerName)}${local?' · 本機草稿':''}</span></footer></div>`}
@@ -103,7 +108,7 @@ function characters(data,key){
  const list=myCharacters(data);
  if(!list.length)return `<section class="front-empty"><span>MY CHARACTER ARCHIVE</span><h1>角色名鑑還是空的</h1><p>標記為「我的角色」的資料公開後，便會出現在這裡。</p></section>`;
  let index=Math.max(0,list.findIndex(x=>x.key===key));const selected=list[index],{campaign:c,character:p}=selected;
- return `<section class="character-stage" data-character-index="${index}"><div class="character-stage-bg" data-label="MY CHARACTERS" style="--portrait-bg:${p.color||'#375963'}"></div><div class="character-feature">${portrait(c,p,'feature')}<div class="character-copy"><span class="front-kicker">${e(systemName(c))} · 我的角色</span><h1>${e(p.name)}</h1><p class="character-class">${e(charSubtitle(c,p))}</p><dl><div><dt>所屬團務</dt><dd><a href="#/story/${e(c.id)}">${e(c.title)}</a></dd></div><div><dt>玩家</dt><dd>${e(p.player)}</dd></div><div><dt>GM</dt><dd>${e(c.gm)}</dd></div>${p.ancestry?`<div><dt>種族</dt><dd>${e(p.ancestry)}</dd></div>`:''}${p.background?`<div><dt>背景</dt><dd>${e(p.background)}</dd></div>`:''}</dl><p class="character-description">${e(p.notes||'這名角色的故事，還等著被寫下。')}</p>${p.sheetUrl?`<a class="front-text-link" href="${e(p.sheetUrl)}" target="_blank" rel="noopener noreferrer">開啟角色卡 ${icon('link')}</a>`:''}</div></div><div class="character-selector-wrap"><button class="selector-arrow prev" data-action="char-prev" aria-label="上一位角色">${icon('back')}</button><div class="character-selector" id="character-selector" role="listbox" aria-label="選擇角色">${list.map((x,i)=>`<a role="option" aria-selected="${i===index}" href="#/characters/${x.key}" class="selector-card ${i===index?'selected':''}" data-character-select data-selector-index="${i}" style="--portrait-bg:${x.character.color||'#375963'}">${portrait(x.campaign,x.character,'selector')}<span><strong>${e(x.character.name)}</strong><small>${e(x.campaign.title)}</small></span></a>`).join('')}</div><button class="selector-arrow next" data-action="char-next" aria-label="下一位角色">${icon('arrow')}</button></div><p class="selector-help">使用左右方向鍵、箭頭或角色卡循環選擇 · ${index+1} / ${list.length}</p></section>`;
+ return `<section class="character-stage" data-character-index="${index}"><div class="character-stage-bg" data-label="${e(p.name)}" style="--portrait-bg:${p.color||'#375963'}"></div><div class="character-feature">${portrait(c,p,'feature',characterArrow('prev','feature',list.length<2)+characterArrow('next','feature',list.length<2))}<div class="character-copy"><span class="front-kicker">${e(systemName(c))} · 我的角色</span><h1>${e(p.name)}</h1><p class="character-class">${e(charSubtitle(c,p))}</p><dl><div><dt>所屬團務</dt><dd><a href="#/story/${e(c.id)}">${e(c.title)}</a></dd></div><div><dt>玩家</dt><dd>${e(p.player)}</dd></div><div><dt>GM</dt><dd>${e(c.gm)}</dd></div>${p.ancestry?`<div><dt>種族</dt><dd>${e(p.ancestry)}</dd></div>`:''}${p.background?`<div><dt>背景</dt><dd>${e(p.background)}</dd></div>`:''}</dl><p class="character-description">${e(p.notes||'這名角色的故事，還等著被寫下。')}</p>${p.sheetUrl?`<a class="front-text-link" href="${e(p.sheetUrl)}" target="_blank" rel="noopener noreferrer">開啟角色卡 ${icon('link')}</a>`:''}</div></div><div class="character-selector-wrap">${characterArrow('prev','selector',list.length<2)}<div class="character-selector" id="character-selector" role="listbox" aria-label="選擇角色">${list.map((x,i)=>`<a role="option" aria-selected="${i===index}" href="#/characters/${x.key}" class="selector-card ${i===index?'selected':''}" data-character-select data-selector-index="${i}" style="--portrait-bg:${x.character.color||'#375963'}">${portrait(x.campaign,x.character,'selector')}<span><strong>${e(x.character.name)}</strong><small>${e(x.campaign.title)}</small></span></a>`).join('')}</div>${characterArrow('next','selector',list.length<2)}</div><p class="selector-help">使用左右方向鍵、箭頭或角色卡循環選擇 · ${index+1} / ${list.length}</p></section>`;
 }
 
 function hallOfFame(data,key=''){
@@ -206,6 +211,7 @@ async function boot(){
  }
 }
 boot();
+
 
   })();
 })();

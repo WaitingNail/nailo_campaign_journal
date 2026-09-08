@@ -15,6 +15,7 @@ if(!elements.app.innerHTML.includes('#/hall'))throw new Error('Public app is mis
 const source=await readFile(new URL('dist/front.js',root),'utf8');
 if(!source.includes("allCharacters(data).filter(x=>x.character.mine)"))throw new Error('Character archive is not restricted to owned characters.');
 const {characters,hallOfFame,journal}=await import(new URL('dist/front.js',root));
+const {escapeHtml}=await import(new URL('dist/model.js',root));
 const ownedCount=data.campaigns.flatMap(c=>c.characters).filter(character=>character.mine).length;
 const allCount=data.campaigns.flatMap(c=>c.characters).length;
 const playerCount=new Set(data.campaigns.flatMap(c=>c.characters).map(character=>character.player?.trim()||'未記錄玩家')).size;
@@ -35,7 +36,7 @@ const owned=colorData.campaigns.flatMap(c=>c.characters.map(character=>({campaig
 if(!owned)throw new Error('Fixture needs at least one owned character.');
 owned.character.color='#123456';
 const characterHtml=characters(colorData);
-if(characterHtml.includes('--selected-character-color:')||!characterHtml.includes('class="character-stage-bg" data-label="MY CHARACTERS" style="--portrait-bg:#123456"'))throw new Error('Character archive did not retain the previous backdrop structure.');
+if(characterHtml.includes('--selected-character-color:')||!characterHtml.includes(`class="character-stage-bg" data-label="${escapeHtml(owned.character.name)}" style="--portrait-bg:#123456"`))throw new Error('Character archive did not retain the previous backdrop structure.');
 const css=await readFile(new URL('dist/front.css',root),'utf8');
 if(!css.includes('@keyframes characterPortraitInNext'))throw new Error('Character switching animation is missing.');
 if(!css.includes('.campaign-cover{')||!css.includes('object-fit:cover'))throw new Error('Campaign cover is not configured as a full-bleed image.');
