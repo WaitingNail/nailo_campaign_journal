@@ -1,10 +1,10 @@
-// Shared by the private editor, server publisher, and public renderer.
+// Public display uses generic labels; stored IDs still drive grouping and counts.
 export const isAnonymous = p => typeof p.anonymous === 'boolean' ? p.anonymous : !p.mine;
 export const playerKey = p => p.playerId || p.player.trim().normalize('NFKC');
 const nameKey = name => name.trim().normalize('NFKC');
 const makeId = prefix => prefix + crypto.randomUUID().replaceAll('-', '');
-export const anonymousPlayerName = id => `匿名玩家 ${id.replace(/^pl_/, '').slice(0, 6).toUpperCase()}`;
-export const anonymousCharacterName = id => `匿名角色 ${id.replace(/^pc_/, '').slice(0, 6).toUpperCase()}`;
+export const anonymousPlayerName = () => '匿名玩家';
+export const anonymousCharacterName = () => '匿名角色';
 
 export function normalizePrivacy(data, previous = { campaigns: [] }, ids = {}) {
  const prior = new Map(), names = new Map();

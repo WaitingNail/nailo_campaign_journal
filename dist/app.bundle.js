@@ -2,13 +2,13 @@
   "use strict";
   const __modules = Object.create(null);
   __modules["./privacy.js"] = (() => {
-// Shared by the private editor, server publisher, and public renderer.
+// Public display uses generic labels; stored IDs still drive grouping and counts.
 const isAnonymous = p => typeof p.anonymous === 'boolean' ? p.anonymous : !p.mine;
 const playerKey = p => p.playerId || p.player.trim().normalize('NFKC');
 const nameKey = name => name.trim().normalize('NFKC');
 const makeId = prefix => prefix + crypto.randomUUID().replaceAll('-', '');
-const anonymousPlayerName = id => `匿名玩家 ${id.replace(/^pl_/, '').slice(0, 6).toUpperCase()}`;
-const anonymousCharacterName = id => `匿名角色 ${id.replace(/^pc_/, '').slice(0, 6).toUpperCase()}`;
+const anonymousPlayerName = () => '匿名玩家';
+const anonymousCharacterName = () => '匿名角色';
 
 function normalizePrivacy(data, previous = { campaigns: [] }, ids = {}) {
  const prior = new Map(), names = new Map();
