@@ -19,10 +19,12 @@
       "description": "一部日治時代的無聲電影，安靜地在酒吧放映。一切寂然無聲。而可怕的陰影籠罩著，人們對此還一無所知……",
       "characters": [
         {
-          "id": "b18d142f-4280-43dd-a8ad-e9e3bb89fff5",
+          "id": "pc_5fc432356af3092f71fe753e26139092",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "王熙文",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/ad496b2035594c13ae9c30d2991063c3.png",
           "portraitAlt": "",
           "color": "#33A6B8",
@@ -110,335 +112,79 @@
           "sheetUrl": ""
         },
         {
-          "id": "16a3b532-d4e2-40bd-9b85-da487bcb5086",
-          "name": "陳師恩",
-          "player": "鍋子",
+          "id": "pc_7fdbdd32a4b66b8d77b6c85da4d23f29",
+          "playerId": "pl_5c95650da5f0bd6838f3503f5a3b2f0b",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 7FDBDD",
+          "player": "匿名玩家 5C9565",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "",
-          "background": "",
-          "classes": [],
-          "occupation": "記者",
-          "attributes": {
-            "STR": 35,
-            "CON": 50,
-            "SIZ": 60,
-            "DEX": 55,
-            "APP": 70,
-            "INT": 85,
-            "POW": 75,
-            "EDU": 87
-          },
-          "skills": [
-            {
-              "name": "人類學",
-              "value": 40
-            },
-            {
-              "name": "魅力",
-              "value": 60
-            },
-            {
-              "name": "攀爬",
-              "value": 40
-            },
-            {
-              "name": "信用評級",
-              "value": 20
-            },
-            {
-              "name": "社群紀律",
-              "value": 50
-            },
-            {
-              "name": "歷史",
-              "value": 40
-            },
-            {
-              "name": "威脅",
-              "value": 65
-            },
-            {
-              "name": "法律",
-              "value": 65
-            },
-            {
-              "name": "聆聽",
-              "value": 60
-            },
-            {
-              "name": "心理學",
-              "value": 65
-            },
-            {
-              "name": "識破",
-              "value": 60
-            },
-            {
-              "name": "隱匿",
-              "value": 50
-            },
-            {
-              "name": "追蹤",
-              "value": 60
-            }
-          ],
-          "notes": "",
-          "sheetUrl": ""
-        },
-        {
-          "id": "28b0165b-088d-4c1e-9bea-72999ab11e54",
-          "name": "周瑜",
-          "player": "瑜",
-          "mine": false,
-          "portrait": "./assets/characters/773481578123421bbed8895a1425f5b8.png",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "",
-          "background": "",
-          "classes": [],
-          "occupation": "駭客",
-          "attributes": {
-            "STR": 45,
-            "CON": 55,
-            "SIZ": 60,
-            "DEX": 55,
-            "APP": 40,
-            "INT": 70,
-            "POW": 75,
-            "EDU": 75
-          },
-          "skills": [
-            {
-              "name": "電腦使用",
-              "value": 75
-            },
-            {
-              "name": "信用評級",
-              "value": 70
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 14
-            },
-            {
-              "name": "社群紀律",
-              "value": 54
-            },
-            {
-              "name": "閃避",
-              "value": 52
-            },
-            {
-              "name": "電子學",
-              "value": 65
-            },
-            {
-              "name": "戰鬥(鬥毆)",
-              "value": 58
-            },
-            {
-              "name": "語言(英文)",
-              "value": 41
-            },
-            {
-              "name": "母語",
-              "value": 75
-            },
-            {
-              "name": "圖書館使用",
-              "value": 75
-            },
-            {
-              "name": "聆聽",
-              "value": 22
-            },
-            {
-              "name": "科學(密碼學)",
-              "value": 75
-            },
-            {
-              "name": "識破",
-              "value": 52
-            },
-            {
-              "name": "作夢",
-              "value": 64
-            },
-            {
-              "name": "夢知識",
-              "value": 7
-            }
-          ],
-          "notes": "求學時期個性不鮮活, 人格沒特質. 不起眼不受歡迎. 曾被大人懷疑是自閉症或智能不足, 個性低調不愛說話, 小學生日時請父親買了一台筆電給她, 開啟了她人生的新視界, 很快的發現在資訊的領域中實力至上, 有能力的人就有力量, 可以做到很多事. 於是開始學習程式設計、演算法跟密碼學.\n\n結果在此方面展現了超高的天賦, 以最愛的電影主角名字 Neo在駭客界打下名聲, 有人謠傳她也是匿名者(ANONYMOUS)的一員, 但此項傳聞未得到證實.\n\n支援維基解密、入侵北韓網站、入侵中國及香港政府網路、攻擊 ISIS等活動中據說都有她的足跡在.\n\n目前任職於一般企業的資訊部門, 得助於疫情時間企業紛紛轉在家工作.平時公司內低調, 工作總是壓著死線完成. 積效普普, 其實私底下是駭客,從散佈病毒讓一般電腦在閒置時幫忙挖礦, 到收集個資, 駭入各政府機關跟民間企業收集資訊, 盜取資料. \n\n目前駭客工作多為收集及提供情報, 消抹資料, 也幫資安公司測試公司防火牆安全度並提供報告跟建議. 利用比特幣把不法所得洗白, 駭入住家寵物鏡頭收集個人隱私資料或盜取商業機密都有.",
-          "sheetUrl": ""
-        },
-        {
-          "id": "acb868b8-00f4-40de-936d-a5c087ff65ac",
-          "name": "陳奕賢",
-          "player": "阿菲",
-          "mine": false,
-          "portrait": "./assets/characters/a9ea6d350d6f4741afaa14ba60fc8d31.png",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "",
-          "background": "",
-          "classes": [],
-          "occupation": "制服警察",
-          "attributes": {
-            "STR": 50,
-            "CON": 60,
-            "SIZ": 70,
-            "DEX": 40,
-            "APP": 35,
-            "INT": 40,
-            "POW": 55,
-            "EDU": 72
-          },
-          "skills": [
-            {
-              "name": "信用評級",
-              "value": 10
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 10
-            },
-            {
-              "name": "閃避",
-              "value": 70
-            },
-            {
-              "name": "開車",
-              "value": 40
-            },
-            {
-              "name": "戰鬥(鬥毆)",
-              "value": 70
-            },
-            {
-              "name": "火器(手槍)",
-              "value": 75
-            },
-            {
-              "name": "急救",
-              "value": 50
-            },
-            {
-              "name": "威脅",
-              "value": 40
-            },
-            {
-              "name": "語言(英文)",
-              "value": 36
-            },
-            {
-              "name": "母語",
-              "value": 72
-            },
-            {
-              "name": "法律",
-              "value": 49
-            },
-            {
-              "name": "心理學",
-              "value": 50
-            },
-            {
-              "name": "識破",
-              "value": 50
-            },
-            {
-              "name": "作夢",
-              "value": 50
-            },
-            {
-              "name": "夢知識",
-              "value": 5
-            }
-          ],
-          "notes": "畢業於中央警察大學，天資普通但很努力的資優生，身為家中長子希望自己能讓父母感到驕傲，靠著熬夜用功讀書苦學而拿到好成績。在警局和派出所時，別人眼中的他是個脾氣好、善於照顧後輩的好大哥。\n\n單身，曾經交往過兩任女友卻都無疾而終，常常被抱怨過於忙碌工作而忽略另一半。",
-          "sheetUrl": ""
-        },
-        {
-          "id": "e6680585-99cf-4bcb-8f54-8ba894fe0f18",
-          "name": "李金順",
-          "player": "柚音",
-          "mine": false,
-          "portrait": "./assets/characters/0a1cf612f6244f26a9bbd569a7a3162d.png",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
           "occupation": "",
-          "attributes": {
-            "STR": 80,
-            "CON": 60,
-            "SIZ": 80,
-            "DEX": 50,
-            "APP": 35,
-            "INT": 45,
-            "POW": 75,
-            "EDU": 70
-          },
-          "skills": [
-            {
-              "name": "信用評級",
-              "value": 30
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 5
-            },
-            {
-              "name": "社群紀律",
-              "value": 20
-            },
-            {
-              "name": "閃避",
-              "value": 65
-            },
-            {
-              "name": "戰鬥(鬥毆)",
-              "value": 75
-            },
-            {
-              "name": "急救",
-              "value": 50
-            },
-            {
-              "name": "威脅",
-              "value": 75
-            },
-            {
-              "name": "跳躍",
-              "value": 25
-            },
-            {
-              "name": "圖書館使用",
-              "value": 60
-            },
-            {
-              "name": "說服",
-              "value": 50
-            },
-            {
-              "name": "心理學",
-              "value": 40
-            },
-            {
-              "name": "識破",
-              "value": 60
-            },
-            {
-              "name": "隱匿",
-              "value": 60
-            }
-          ],
-          "notes": "每天早上從簡訊跟阿罵報平安後跑步開始，接著訓練或者工作，三餐有空的時候就自己煮，有空的時候會在吃飯時跟阿罵視訊。小時候父親過世後，母親就拋棄[拳擊手]離家，從小由阿罵帶大，但是由於缺乏監督，國中時還是走上了歪路，因為體型壯碩，所以成為了地方公廟的打手，從此頻繁進出警局，因此認識了[阿菲警察]，因為[阿菲警察]覺得[拳擊手]是個本性善良的孩子，因此[阿菲警察]跟阿罵都一直苦口婆心的勸他金盆洗手，直到有一次踢到鐵板，所屬的組織被踢館，過程中[拳擊手]肚子也中了一刀，差點進鬼門關，在昏迷過程中，看到總是像超人一樣強大的阿罵露出擔心、憔悴的表情，因此決定採用[阿菲警察]的建議從此金盆洗手，跟著成為了一名拳擊手。現在已經稍微打出一點名聲，托[阿菲警察]的福接到了[電影女星]的動作指導工作，因此目前也接些電影動作指導工作。在台北有拳擊館，喜歡打電動",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_d3d7f81673c537d53792fc1a71bd5932",
+          "playerId": "pl_60f694c77e5962451e377df025115b31",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 D3D7F8",
+          "player": "匿名玩家 60F694",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_9079193e10599a9c5fb9ca14f2d16f68",
+          "playerId": "pl_c3f26187e5d1e8f094ce8e924ef2fd4b",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 907919",
+          "player": "匿名玩家 C3F261",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_b52b648d20f4cb092e47496547ef70f0",
+          "playerId": "pl_0f5f8059c67abe231d5d343271fcd672",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 B52B64",
+          "player": "匿名玩家 0F5F80",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         }
       ],
@@ -460,10 +206,12 @@
       "description": "在萬門之城——法印城——一切皆有可能。\n\n這座懸浮於現實邊界之上的城市，是無數位面交會的樞紐，是神祇與異界旅者擦肩而過之地。\n\n如今，一場無法解釋的故障撼動了多元宇宙的根基。\n一些本應沉睡於死亡中的靈魂，再度睜開雙眼。\n\n你們無名、無記憶，唯有一個模糊的直覺驅使你們前行：找到真相，尋找你們的本質。\n\n\n你們將穿越錯綜複雜的街道與門扉，與不朽者交鋒，深入外域最遙遠的邊境。\n\n在這段旅程中，你們將發現一場潛藏於現實法則背後的陰謀，一場可能改寫萬象的危機。\n\n而你們，正站在命運之輪的轉折點上。",
       "characters": [
         {
-          "id": "172cf6f9-8b6b-4a07-bb3f-1b2c14b5278d",
+          "id": "pc_d1ab49a542fc9ae0e6e3223884e97e46",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "秘術師",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/6b4ced03655640d1a35d34848bf83438.webp",
           "portraitAlt": "",
           "color": "#CA7A2C",
@@ -483,10 +231,12 @@
           "sheetUrl": ""
         },
         {
-          "id": "7aa945d7-3594-4beb-aea5-93c329d24604",
+          "id": "pc_939291da8d4b181ce9f363eae49c0471",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "雅斯特拉．星語",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/6c7de0305516485ca23487273b997a28.webp",
           "portraitAlt": "",
           "color": "#D9CD90",
@@ -506,10 +256,12 @@
           "sheetUrl": ""
         },
         {
-          "id": "dd683cf3-2b25-49c3-96f8-9cc0478fc18b",
+          "id": "pc_130bfc91a205a0529110c67a0d98e3c8",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "黑曜石法菈",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/becc17870953420bab56afb47aaa9068.webp",
           "portraitAlt": "",
           "color": "#EBB471",
@@ -529,118 +281,98 @@
           "sheetUrl": ""
         },
         {
-          "id": "01b8f395-4076-4053-b864-8113f8e1f676",
-          "name": "渡鴨、一",
-          "player": "丹丹",
+          "id": "pc_556b310cfb72fbc3460c7c532dbf6ca5",
+          "playerId": "pl_110e60c16bbf6f63f7ff2d9164aabe93",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 556B31",
+          "player": "匿名玩家 110E60",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "半精靈",
-          "background": "水手",
-          "classes": [
-            {
-              "name": "術士",
-              "level": 5,
-              "subclass": ""
-            }
-          ],
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "咦？我原本不是待在密斯卡托尼克大學嗎？為什麼會跑來這個異世界啦，還有許多火球和人飛在空中！\n\n天哪，我就知道不該去圖書館拿到那本莫名其妙的鬼書，還不知死活念了上面的咒文，現在可好了，被丟到這個鳥不生蛋的地方，每個人看起來都像巫婆或殺人犯。海瑟說得可真好，我再不改改這種個性遲早會被教授當掉。\n\n但不管境遇再怎麼悲慘，至少我還有一把吉他，沒有人可以阻擋我的節奏，我一定會活下去，Rock 'n' Roll直到世界盡頭！",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "cd8988d4-e82c-449c-bf50-ce9e0f9f47e5",
-          "name": "渡鴨、二",
-          "player": "丹丹",
+          "id": "pc_942bc071e4000b646effe1bd73752dd2",
+          "playerId": "pl_110e60c16bbf6f63f7ff2d9164aabe93",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 942BC0",
+          "player": "匿名玩家 110E60",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "兔人",
-          "background": "城市賞金獵人",
-          "classes": [
-            {
-              "name": "武僧",
-              "level": 5,
-              "subclass": "散打宗"
-            }
-          ],
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "居住在大可愛森林被稱作大可愛一族，生活在流奶流蜜之地(真正意義上)，但美好的日子只是表面，實際上要隨時對抗可怕的奇美魔怪物，而奇美魔竟然是被黑暗蠱惑心靈的大可愛轉變而成。\n\n我和一隻巨大貓小捌，以及青蛙極卡蛙是好朋友。日常便是到處唱歌玩耍與修練武藝參與奇美魔討伐，時常會發出怪叫聲。\n\n某一日去討伐蚊子怪時被叮到，之後陷入高燒，等到醒來時發現自己跑到了不認識的地方，沒有隨處可以取得的美食，而是要花錢購買，身高似乎也長高了，真是一個相當殘酷的世界，這究竟是怎麼一回事呢？蛤、蛤？",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "67c2d1fb-197d-4fd5-b728-c35a5bb6edc2",
-          "name": "渡鴨、三",
-          "player": "丹丹",
+          "id": "pc_d3d21a703f0e89c976c8ec27a8ef544d",
+          "playerId": "pl_110e60c16bbf6f63f7ff2d9164aabe93",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 D3D21A",
+          "player": "匿名玩家 110E60",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "地侏",
-          "background": "公會工匠",
-          "classes": [
-            {
-              "name": "奇械師",
-              "level": 5,
-              "subclass": "魔炮師"
-            }
-          ],
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "符文大地瀰漫著微光般的奧術，那是禁忌的力量...\n\n我們班德爾偵察隊奉命去追查這股強大且無法控制的力量，來到了皮爾托福，據說他們找到了使用科技提煉出奧術的方法，如果能將我擅長的工藝加入奧術這個元素，是不是可以發揮更強大的力量來造福社會呢？\n\n當我在科學家們的協助下，終於將奧術能量石放入一台微型砲台運作時，城市突然響起警報，趕往現場的守衛告訴我們使用奧術科技的傳送門正遭到海盜攻擊。\n\n我連忙抄起武器趕去加入戰鬥，一同捍衛這座偉大的都城。然而在激戰之中，傳送門被擊破了，我瞬間被捲入巨大的能量洪流失去了意識...",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "8d7054a8-1b3e-4858-8b58-9ffa83a1b30b",
-          "name": "引路者、一",
-          "player": "柚音",
+          "id": "pc_c4c4901b352191087e9f58f3f2e6f70c",
+          "playerId": "pl_0f5f8059c67abe231d5d343271fcd672",
+          "anonymous": true,
           "mine": false,
-          "portrait": "./assets/characters/d54cb38cab4f4bb28c65a947173f8a46.webp",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "人類",
-          "background": "公會工匠",
-          "classes": [
-            {
-              "name": "奇械師",
-              "level": 5,
-              "subclass": "戰地匠師"
-            }
-          ],
+          "name": "匿名角色 C4C490",
+          "player": "匿名玩家 0F5F80",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "我和弟弟原本在工坊裡工作。\n那天本該只是再普通不過的一天，\n卻在毫無預兆的情況下，遭到了不明人士的襲擊。\n\n我們被制伏，推進一個早已刻好的鍊成陣中。\n鍊成啟動的瞬間，刺眼的光芒吞沒了一切。\n在意識消失前，我看見了——\n來自鍊成陣彼端、無法理解的存在。\n在我來得及反應之前，它將我和弟弟一同吞噬。\n\n再次醒來時，我仍然身處這個世界。\n我活了下來。\n\n然而，弟弟的身體卻沒有回來。\n他的靈魂被強行抽離，只能寄宿在一個玩偶之中，\n以那樣的形式，勉強延續存在。\n\n為了找到敵人，也為了讓弟弟恢復原本的模樣，\n我帶著弟弟，踏上了旅途。",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "6c92a180-fbfb-43cf-a53d-79fdf0ee481a",
-          "name": "引路者、二",
-          "player": "柚音",
+          "id": "pc_918265681b375a23a5d70439886a1c89",
+          "playerId": "pl_0f5f8059c67abe231d5d343271fcd672",
+          "anonymous": true,
           "mine": false,
-          "portrait": "./assets/characters/eae27864154d4570ae063c73236d63ae.webp",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "半精靈",
-          "background": "遠行者",
-          "classes": [
-            {
-              "name": "吟遊詩人",
-              "level": 5,
-              "subclass": "靈魂學院"
-            }
-          ],
+          "name": "匿名角色 918265",
+          "player": "匿名玩家 0F5F80",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "「言語，擁有力量」\n\n對我來說，這從來不是一句比喻。\n\n從小，我就知道自己與常人不同。\n起初，我以為那只是歌唱的天賦——\n\n直到有一天，我與人起了衝突，\n言語如利刃般破口而出。\n看著對方在我面前崩潰的瞬間，\n我才明白——\n言語的重量，遠遠超出我的想像。\n\n那之後，我不敢再隨意開口。\n唯有在夜深人靜時，\n我才與唯一的朋友——玩偶順順，\n低聲訴說心中的秘密。\n\n某個夜晚，奇蹟發生了。\n順順回應了我。\n\n害怕？\n我甚至還來不及高興，\n又怎會有時間感到害怕。\n\n順順不只是傾聽。\n它教我如何與這股力量共處，\n如何讓言語不再傷人，\n反而成為保護自己的存在。\n\n多虧了順順，\n我得以用音符養活自己，\n用音樂建構屬於我的世界。\n\n然而，現實並沒有像童話那樣，\n從此過著幸福快樂的日子。\n\n我終究無法完全掌控這股力量。\n而那位擁有權力、卻被慾望迷惑的公主，\n動用了整個國家的力量，\n將我囚禁起來。\n\n被關進籠中的那段日子，\n我第一次懷疑——\n自己是否再也無法，自由地翱翔於天空。\n\n幸好，宮中爆發了暴動。\n混亂之中，我得以逃離。\n\n被關進籠子之後，\n我才真正明白——\n自由，究竟有多麼珍貴。",
+          "notes": "",
           "sheetUrl": ""
         }
       ],
@@ -698,96 +430,18 @@
       "description": "柏德之門口迎來一群埃爾托瑞爾的難民，到底發生了什麼事呢?",
       "characters": [
         {
-          "id": "4cd0f50c-aaba-4df7-b410-c97388ed8a91",
-          "name": "寬容",
-          "player": "朱朱",
+          "id": "pc_a71058e5e27cb771ce308ea4fca0e323",
+          "playerId": "pl_81143592b10c967dcb24c78ccbe8d6ab",
+          "anonymous": true,
           "mine": false,
-          "portrait": "./assets/characters/eb86e1a584874c67b7831ce9c4e24f6b.webp",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "提夫林",
-          "background": "士兵(軍需官)",
-          "classes": [
-            {
-              "name": "法師",
-              "level": 3,
-              "subclass": "書士學派"
-            },
-            {
-              "name": "牧師",
-              "level": 2,
-              "subclass": "和平領域"
-            }
-          ],
-          "occupation": "",
-          "attributes": {},
-          "skills": [],
-          "notes": "寬容是名魔鬼血統特別突出的提夫林。他從原野的偏鄉來博德之門討生活。\n原本只是入焰拳運用年輕時學習過的法師法術做文書工作，但卻漸漸陷入組織的腐敗，深入黑暗面後，沉溺其中。\n\n心中雖不安，但已經知道太多不該知道的事，只能繼續同流合汙。\n為了讓自己好過一些，總是將不義之財大方揮霍，所以仍過著貧困的生活。",
-          "sheetUrl": ""
-        },
-        {
-          "id": "592316b6-0973-4933-8247-0803d7c9d2c7",
-          "name": "傑斯提斯．巴塔善",
-          "player": "丹丹",
-          "mine": false,
+          "name": "匿名角色 A71058",
+          "player": "匿名玩家 811435",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "提夫林",
-          "background": "平民英雄",
-          "classes": [
-            {
-              "name": "契術師",
-              "level": 5,
-              "subclass": "深海領主"
-            }
-          ],
-          "occupation": "",
-          "attributes": {},
-          "skills": [],
-          "notes": "巴塔善家在一個世紀前為海盜，後來在柏德之門以龐大的財富(無論是否正當)站穩根基，成為一個小有名氣的提夫林望族，與波特爾家族合作進行經商貿易。\n\n家族時常為弱勢的提夫林發聲，我在幫助他們的過程中，時常目睹焰拳各種骯髒腐敗之事，恃弱凌强，總是使我內心如火爐般灼燒，因此興起推翻焰拳組織的念頭。那晚我見到提夫林難民小男孩因偷了一塊麵包，就被焰拳的人驅趕不准進入柏德之門。我開始計畫推翻焰拳組織，然而還沒起義我就失風被捕，原本應該上絞刑台的我因為巴塔善家的求情而免去一死，但條件是要幫焰拳做那些他們不能做的骯髒事，而我就此成為了焰拳的地下殺手……\n\n在某次任務時，我因為失敗而面臨死亡，身為提夫林死後也只能落入地獄，那裏充滿著血色與火焰，接著我就見到了他，阿斯蒙蒂斯，九獄之主。\n\n有著火焰般羊角與頭髮的阿斯蒙蒂斯察覺到我心中的憤怒與對生存的渴望，『你還不想死，我的子孫，這裡還不是你的終點……來吧，簽下去……接受你的宿命……』\n\n我在那張畫有倒五芒星圖騰的羊皮紙上按下血印，在阿斯蒙蒂斯的狂笑聲中我倒抽一口氣復活，發現右手拇指傳來疼痛，上面流著鮮血……\n\n巴塔善家在一個世紀前為海盜，後來在柏德之門以龐大的財富(無論是否正當)站穩根基，成為一個小有名氣的提夫林望族，與波特爾家族合作進行經商貿易。\n\n家族時常為弱勢的提夫林發聲，我在幫助他們的過程中，時常目睹焰拳各種骯髒腐敗之事，恃弱凌强，總是使我內心如火爐般灼燒，因此興起推翻焰拳組織的念頭。那晚我見到提夫林難民小男孩因偷了一塊麵包，就被焰拳的人驅趕不准進入柏德之門。我開始計畫推翻焰拳組織，然而還沒起義我就失風被捕，原本應該上絞刑台的我因為巴塔善家的求情而免去一死，但條件是要幫焰拳做那些他們不能做的骯髒事，而我就此成為了焰拳的地下殺手……\n\n在某次任務時，我因為失敗而面臨死亡，身為提夫林死後也只能落入地獄，那裏充滿著血色與火焰，接著我就見到了他，阿斯蒙蒂斯，九獄之主。\n\n有著火焰般羊角與頭髮的阿斯蒙蒂斯察覺到我心中的憤怒與對生存的渴望，『你還不想死，我的子孫，這裡還不是你的終點……來吧，簽下去……接受你的宿命……』\n\n我在那張畫有倒五芒星圖騰的羊皮紙上按下血印，在阿斯蒙蒂斯的狂笑聲中我倒抽一口氣復活，發現右手拇指傳來疼痛，上面流著鮮血……",
-          "sheetUrl": ""
-        },
-        {
-          "id": "bf98bf4f-2bd4-4211-9ae0-591d4fcbfdf0",
-          "name": "小黃/邦邦",
-          "player": "鍋子",
-          "mine": false,
-          "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "聖飛象",
-          "background": "假面人",
-          "classes": [
-            {
-              "name": "牧師",
-              "level": 5,
-              "subclass": ""
-            }
-          ],
-          "occupation": "",
-          "attributes": {},
-          "skills": [],
-          "notes": "只記得近100年的事，在這之前的事，不知為何都失憶了，只記得自己好像忘記了很重要的摯友，但是誰呢？\n而有記憶的這100年，聖飛象這種天界生物的外表，讓邦邦無論出現在哪裡都吸引注目。\n他想懲罰那些偷拐搶騙的壞蛋，但那些不法分子總是對他抱持警覺心，讓邦邦的身邊總是和平。但邦邦知道，不法之事都在他看不到的地方發生。\n\n所以邦邦將自己偽裝成一隻狗讓大家放下戒心，他沒有固定棲所，但主要都在焰拳生活，原因有二：\n一、焰拳內部的不法之事逐漸增加，他進去調查有什麼陰謀可能會發生，並盡早斬草除根\n二、焰拳中有一個聖飛象，他想知道天界生物怎麼忍受看著不法之事在自己眼皮底下發生\n\n但邦邦也累了，這100年，博德之門的邪惡不斷滋養，他不斷尋找躲避他的邪惡、不斷懲戒那些不法分子，卻永遠斬不完，甚至越來越多。累了，雖然依然在剷除邪惡，但是比起積極處理掉，更多是「怎麼又來了」的厭世感。即使如此，但他還是會繼續執行下去，這是他的使命。\n\n或許這樣繼續堅持，在找回自己的記憶之後，邦邦能不愧對那位摯友，以及過去的自己吧。",
-          "sheetUrl": ""
-        },
-        {
-          "id": "6e5db41c-6c9e-4ca1-8019-6106d5763fcd",
-          "name": "奧策安",
-          "player": "柚音",
-          "mine": false,
-          "portrait": "./assets/characters/0119ee10f647439cbf1d0fdba776646b.webp",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "精靈",
-          "background": "平民英雄",
-          "classes": [
-            {
-              "name": "聖騎士",
-              "level": 5,
-              "subclass": "遠古之誓"
-            }
-          ],
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
@@ -795,26 +449,79 @@
           "sheetUrl": ""
         },
         {
-          "id": "aa041611-aa01-465b-9e1c-8919fd7a8f93",
-          "name": "奏戀",
-          "player": "小魚",
+          "id": "pc_a49365e758dbf94abe77073178c068cc",
+          "playerId": "pl_110e60c16bbf6f63f7ff2d9164aabe93",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 A49365",
+          "player": "匿名玩家 110E60",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
-          "ancestry": "龍裔",
-          "background": "藝人",
-          "classes": [
-            {
-              "name": "吟遊詩人",
-              "level": 5,
-              "subclass": "劍舞學院"
-            }
-          ],
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "自小,我與妹妹(奏刃)因罕見奇異的髮色與龍族痕跡,而被龍村中人排斥,視為不祥。某天遇到國家\n守護者「焰拳」巡邏到龍村,焰拳成員們認為我們不同於常人髮色,對於我們更是仗勢弱小,使得我們\n姊妹小時候生活如此艱辛,加上實在看不慣他們到處仗勢欺人,剝削各村民的行徑,於是學會了用表演\n、交易與偷盜手段生存。\n\n小時候父親曾想教我劍術,但未繼承其武力,我遺傳了母親的天賦嗓音與藝術才華；妹妹則是\n遺傳父親的劍術。父親曾跟我說「劍能斬敵,歌聲卻能改變人心,妳有隱藏的力量卻未甦醒,相信自己」",
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_241737aa5cabe061e487d957f55c4de6",
+          "playerId": "pl_5c95650da5f0bd6838f3503f5a3b2f0b",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 241737",
+          "player": "匿名玩家 5C9565",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_d983e45423612a746cdd81a9e5ef8639",
+          "playerId": "pl_0f5f8059c67abe231d5d343271fcd672",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 D983E4",
+          "player": "匿名玩家 0F5F80",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
+          "sheetUrl": ""
+        },
+        {
+          "id": "pc_9621b0478aa1c912f67d383d8276d4af",
+          "playerId": "pl_caae6496ba04d28c9a9d8c70e67a6589",
+          "anonymous": true,
+          "mine": false,
+          "name": "匿名角色 9621B0",
+          "player": "匿名玩家 CAAE64",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
+          "ancestry": "",
+          "background": "",
+          "classes": [],
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         }
       ],
@@ -836,10 +543,12 @@
       "description": "一群橋兵帶著本不該出現在這裡的學者與光淑們，前往研究裂谷下的古代遺跡",
       "characters": [
         {
-          "id": "6a9ab7ae-c69c-4914-a46a-d3cb1ebcf5d2",
+          "id": "pc_c01d52dc6e9743a6489df2258cce9b58",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "喬馬里",
           "player": "奈羅",
-          "mine": true,
           "portrait": "",
           "portraitAlt": "",
           "color": "#375963",
@@ -853,71 +562,79 @@
           "sheetUrl": ""
         },
         {
-          "id": "fe8545d6-6663-4c91-bf23-b5119fdce16b",
-          "name": "阿貝娜",
-          "player": "Jackle",
+          "id": "pc_0c11206cb73fd3f456956454bbe7d4d7",
+          "playerId": "pl_1d45c0cfdb320188f6a02f261997819e",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 0C1120",
+          "player": "匿名玩家 1D45C0",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "你的童年在亞西須帝國度過,居住於首\n都亞西米爾。你自幼便被教導要敬重國\n家縝密的官僚體系與複雜的法律制度,\n然而,擔任法警的經歷卻逐漸令你心灰\n意冷。你太常看見掌權者躲在法律背後\n,任由無辜之人受苦。\n為了尋求嶄新的人生,你向東來到破碎\n平原,並找到一份斥候的工作。你很享\n受探索各處高原的過程,但戰營中的生\n活十分殘酷。你也發現,雅烈席卡的平\n民百姓受到的壓迫,甚至比你故鄉的人\n民更加嚴重。",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "bd47a061-d370-4805-8036-907942f0b02f",
-          "name": "塔拉妮",
-          "player": "山姆",
+          "id": "pc_a583fb31022700d34e8a301795011362",
+          "playerId": "pl_8f8b77d969795be1b77d2f45e6ded893",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 A583FB",
+          "player": "匿名玩家 8F8B77",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "身為一名執徒,你已將一生奉獻給弗林教,並立下安貧與奉獻的誓言。你被派往光淑伊莉雅·馬塔的家族,隨後一同前往破碎平原。雅烈席人的軍隊正在那裡對帕山迪人發動復仇之戰。\n你所受的訓練,足以指導士兵進行戰鬥鍛鍊,也能協助學者進行研究。\n你很珍惜這個機會,既能為教團服務,也能探索自身認同的兩個面向。然而,你曾深入研究帕山迪人的文化,因此開始質疑人類為何非得征服他們不可。儘管你的信仰推崇戰爭中的勝利,你仍暗自祈求這場戰爭能夠和平落幕。",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "5766b1f4-0676-4999-8321-aee45c94d1e2",
-          "name": "維德",
-          "player": "小胤",
+          "id": "pc_ece170ad8040bfa84f8bd44da62e4d83",
+          "playerId": "pl_c988b319fbeb79119a6eece1d0b02256",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 ECE170",
+          "player": "匿名玩家 C988B3",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "你是身敗名裂的雅烈席士兵,如今淪落在橋隊服役。隊伍裡只有一人比你加入得更早,而你也已逐漸認命:你這輩子無法離開橋隊。\n你幾乎放棄會有好轉的希望。然而不久前,你幫助一名年輕橋兵逃出戰營。那段經歷讓你感覺重新找回過去小部分的自己。\n此後,你偶爾會看見奇異的光芒從身旁飛掠而過。在那時,你都感到自己變得更加強大,也更加堅定。\n你認為自己有責任照顧隊伍中的其他成員,其中包括一名叫多拉爾的老人,以及一名來自雷熙、名叫喬瑪里的少年。",
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "2e402d0a-3ad4-4a0e-831a-4c5986e3ac9e",
-          "name": "茲紋妲",
-          "player": "雪喵",
+          "id": "pc_8052c1f2252b0f9257539bbba11a2f91",
+          "playerId": "pl_6902c8d1f9390e5704d79d095d576e26",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 8052C1",
+          "player": "匿名玩家 6902C8",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
           "occupation": "",
           "attributes": {},
           "skills": [],
-          "notes": "你是來自商業王國賽勒納的科學家。你在弗瑞茲托公會擔任了多年的低階學徒,之後前往破碎平原,成為薩迪雅斯領地一位名叫伊萊雅・馬塔的雅烈席卡學者所監護的門生。\n馬塔女士鼓勵你研究歷史與考古學,但你真正的目標,是深入了解那些以颶光驅動、被稱為「法器」的裝置。你希望有朝一日能成為法器師,汲取過往的經驗,開創未來的嶄新設計。",
+          "notes": "",
           "sheetUrl": ""
         }
       ],
@@ -947,10 +664,12 @@
       "description": "一群受到嘉義縣文化觀光局委託的專業調查員，針對民雄鄉「安靈園」的古蹟價值進行評估，並協助化解爭議。過程中捲入了當地大家族過往的糾葛之中。",
       "characters": [
         {
-          "id": "3fedcfb1-c045-4344-af0c-19559f46cbfc",
+          "id": "pc_a48c9dfe91c89aea790955c4792a0cbf",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "林采薇",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/e7e12b26854a4534b4d39427a65c5f9b.webp",
           "portraitAlt": "",
           "color": "#375963",
@@ -1026,248 +745,60 @@
           "sheetUrl": ""
         },
         {
-          "id": "82d1bb9f-26d5-4851-a3e3-cde2931c77ad",
-          "name": "翁家培",
-          "player": "朱朱",
+          "id": "pc_4555608995b264382b7d87ab2b131782",
+          "playerId": "pl_81143592b10c967dcb24c78ccbe8d6ab",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 455560",
+          "player": "匿名玩家 811435",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "研究者",
-          "attributes": {
-            "STR": 50,
-            "CON": 50,
-            "SIZ": 55,
-            "DEX": 55,
-            "APP": 65,
-            "INT": 70,
-            "POW": 60,
-            "EDU": 76
-          },
-          "skills": [
-            {
-              "name": "人類學",
-              "value": 63
-            },
-            {
-              "name": "鑑定",
-              "value": 40
-            },
-            {
-              "name": "考古學",
-              "value": 40
-            },
-            {
-              "name": "藝術(攝影)",
-              "value": 50
-            },
-            {
-              "name": "魅力",
-              "value": 40
-            },
-            {
-              "name": "信用評級",
-              "value": 15
-            },
-            {
-              "name": "閃避",
-              "value": 27
-            },
-            {
-              "name": "歷史",
-              "value": 65
-            },
-            {
-              "name": "英語",
-              "value": 38
-            },
-            {
-              "name": "日語",
-              "value": 40
-            },
-            {
-              "name": "母語",
-              "value": 76
-            },
-            {
-              "name": "圖書館使用",
-              "value": 50
-            },
-            {
-              "name": "識破",
-              "value": 41
-            }
-          ],
-          "notes": "政大台史所碩生，嘉義民雄鵝肉店第三代。\n\n這次受文化局邀請參與「安靈園」古蹟價值評估，是他教授主持的合作計畫案，同時也是他碩士論文的實地研究主軸，調查是否順利將直接影響他能否如期畢業。",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "c5ab6756-8008-4dc6-9169-9ef6eb554fb0",
-          "name": "季然",
-          "player": "阿馨",
+          "id": "pc_bf754c29fb2c9e21fbf6cba8e7a9b9a9",
+          "playerId": "pl_b93102518f9837bb7a9afe7747bde8a3",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 BF754C",
+          "player": "匿名玩家 B93102",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "通靈學家",
-          "attributes": {
-            "STR": 40,
-            "CON": 50,
-            "SIZ": 50,
-            "DEX": 40,
-            "APP": 50,
-            "INT": 80,
-            "POW": 75,
-            "EDU": 75
-          },
-          "skills": [
-            {
-              "name": "人類學",
-              "value": 40
-            },
-            {
-              "name": "藝術(攝影)",
-              "value": 21
-            },
-            {
-              "name": "信用評級",
-              "value": 30
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 5
-            },
-            {
-              "name": "閃避",
-              "value": 30
-            },
-            {
-              "name": "話術",
-              "value": 45
-            },
-            {
-              "name": "急救",
-              "value": 20
-            },
-            {
-              "name": "語言(拉丁語)",
-              "value": 26
-            },
-            {
-              "name": "圖書館使用",
-              "value": 60
-            },
-            {
-              "name": "聆聽",
-              "value": 60
-            },
-            {
-              "name": "神祕學",
-              "value": 60
-            },
-            {
-              "name": "說服",
-              "value": 70
-            },
-            {
-              "name": "心理學",
-              "value": 75
-            },
-            {
-              "name": "識破",
-              "value": 60
-            }
-          ],
-          "notes": "多年前在進行工業遺址的田野調查時遭遇了某種怪異現象\n之後她的研究轉向「民俗心理學與超常現象研究」，對超常現象的好奇和科學研究形式形成了她內心主要的矛盾與動力",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "6a765572-864a-4b84-a08a-9ffc57dc9f12",
-          "name": "金豪冶",
-          "player": "Mori",
+          "id": "pc_221f047dcffad2a7d2f313d5f14ac0b5",
+          "playerId": "pl_594f1be89a782a682230a07bf97bda1d",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 221F04",
+          "player": "匿名玩家 594F1B",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "古董商",
-          "attributes": {
-            "STR": 35,
-            "CON": 65,
-            "SIZ": 70,
-            "DEX": 55,
-            "APP": 65,
-            "INT": 70,
-            "POW": 45,
-            "EDU": 69
-          },
-          "skills": [
-            {
-              "name": "會計",
-              "value": 45
-            },
-            {
-              "name": "鑑定",
-              "value": 70
-            },
-            {
-              "name": "藝術(偽造)",
-              "value": 40
-            },
-            {
-              "name": "魅力",
-              "value": 26
-            },
-            {
-              "name": "信用評級",
-              "value": 50
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 9
-            },
-            {
-              "name": "話術",
-              "value": 70
-            },
-            {
-              "name": "歷史",
-              "value": 50
-            },
-            {
-              "name": "英語",
-              "value": 34
-            },
-            {
-              "name": "母語",
-              "value": 69
-            },
-            {
-              "name": "聆聽",
-              "value": 45
-            },
-            {
-              "name": "心理學",
-              "value": 40
-            },
-            {
-              "name": "巧手",
-              "value": 30
-            },
-            {
-              "name": "識破",
-              "value": 55
-            }
-          ],
-          "notes": "在民雄經營古董店多年，人稱金老闆。\n\n以自身的眼光買賣古董賺取價差，但有時候也會用贗品掉包真貨圖利。選擇賣假貨對象時十分小心，至今還未被抓到。在當地有不錯的人脈與名聲，也是這次被觀光局邀請的原因。",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         }
       ],
@@ -1289,10 +820,12 @@
       "description": "1996年七月，一位自稱吳美麗的女性委託你們其中一個人，去海岸鎮幫她找到一個人，確認他安好，那是當年因為各種原因而過繼給別人收養的兒子。\n\n而那天，賀伯颱風即將登陸，有些人忘不了過去的事，而有些人似乎剛想起來......",
       "characters": [
         {
-          "id": "8f28ab49-d78f-4957-970e-87106ad3d73a",
+          "id": "pc_7dcfa3abd62a78fef9ce4499d72cb3e6",
+          "playerId": "pl_3a02f083a602ed38a280b5d6e81c0c48",
+          "anonymous": false,
+          "mine": true,
           "name": "廖振聲",
           "player": "奈羅",
-          "mine": true,
           "portrait": "./assets/characters/d066f788abf34aa3adaf1bc7d7bfed7d.webp",
           "portraitAlt": "",
           "color": "#375963",
@@ -1372,244 +905,65 @@
           "sheetUrl": ""
         },
         {
-          "id": "f1124dde-9200-41f1-a116-d41c7b1b888d",
-          "name": "蘇福平",
-          "player": "丹丹",
+          "id": "pc_5a19c2245144a35d9d8d3d89a0f3f0b7",
+          "playerId": "pl_110e60c16bbf6f63f7ff2d9164aabe93",
+          "anonymous": true,
           "mine": false,
+          "name": "匿名角色 5A19C2",
+          "player": "匿名玩家 110E60",
           "portrait": "",
-          "portraitAlt": "",
-          "color": "#375963",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "酒保",
-          "attributes": {
-            "STR": 50,
-            "CON": 45,
-            "SIZ": 60,
-            "DEX": 45,
-            "APP": 60,
-            "INT": 60,
-            "POW": 75,
-            "EDU": 60
-          },
-          "skills": [
-            {
-              "name": "魅力",
-              "value": 50
-            },
-            {
-              "name": "信用評級",
-              "value": 25
-            },
-            {
-              "name": "偽裝",
-              "value": 40
-            },
-            {
-              "name": "閃避",
-              "value": 43
-            },
-            {
-              "name": "話術",
-              "value": 50
-            },
-            {
-              "name": "戰鬥(鬥毆)",
-              "value": 56
-            },
-            {
-              "name": "火器(手槍)",
-              "value": 24
-            },
-            {
-              "name": "急救",
-              "value": 30
-            },
-            {
-              "name": "威脅",
-              "value": 40
-            },
-            {
-              "name": "聆聽",
-              "value": 40
-            },
-            {
-              "name": "機械維修",
-              "value": 50
-            },
-            {
-              "name": "說服",
-              "value": 40
-            },
-            {
-              "name": "心理學",
-              "value": 34
-            },
-            {
-              "name": "識破",
-              "value": 50
-            }
-          ],
-          "notes": "背後有一顆星星與一朵桃花刺青。\n高中時期曾因為廖振聲在幫派混過一段時間，就讀汽修科。\n畢業後去迎春風擔任酒保，擅長義大利肉醬麵，但味道似乎和小時候的還差了那麼一點。",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "e7955df7-26d5-4040-8b07-fea541eed199",
-          "name": "林知微",
-          "player": "瑜",
+          "id": "pc_3877a3f8dc98412a3ede811abcd03f2c",
+          "playerId": "pl_60f694c77e5962451e377df025115b31",
+          "anonymous": true,
           "mine": false,
-          "portrait": "./assets/characters/80d503eb94c849028b01430924f53da7.webp",
-          "portraitAlt": "",
-          "color": "#375963",
+          "name": "匿名角色 3877A3",
+          "player": "匿名玩家 60F694",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "記者",
-          "attributes": {
-            "STR": 30,
-            "CON": 55,
-            "SIZ": 55,
-            "DEX": 45,
-            "APP": 60,
-            "INT": 55,
-            "POW": 30,
-            "EDU": 50
-          },
-          "skills": [
-            {
-              "name": "藝術(表演)",
-              "value": 30
-            },
-            {
-              "name": "藝術(攝影)",
-              "value": 30
-            },
-            {
-              "name": "信用評級",
-              "value": 30
-            },
-            {
-              "name": "克蘇魯神話",
-              "value": 5
-            },
-            {
-              "name": "閃避",
-              "value": 22
-            },
-            {
-              "name": "話術",
-              "value": 5
-            },
-            {
-              "name": "戰鬥(鬥毆)",
-              "value": 30
-            },
-            {
-              "name": "急救",
-              "value": 30
-            },
-            {
-              "name": "歷史",
-              "value": 50
-            },
-            {
-              "name": "聆聽",
-              "value": 55
-            },
-            {
-              "name": "說服",
-              "value": 50
-            },
-            {
-              "name": "心理學",
-              "value": 55
-            },
-            {
-              "name": "識破",
-              "value": 55
-            },
-            {
-              "name": "隱匿",
-              "value": 50
-            }
-          ],
-          "notes": "從小在金門長大, 喜歡四處拍照, 有時能拍出特別有感覺的照片.大學到台北唸了輔大新聞系, 畢業後花了一段時間找工作, 最後任職於自強早報的記者.目前高壓的工作環境靠著爺爺寄來的金門高粱頂替著.",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         },
         {
-          "id": "3fb1b4cf-66b2-48e8-aaad-358fbdb6d8f2",
-          "name": "林宇涵",
-          "player": "阿菲",
+          "id": "pc_1628be167f8bf87db9fc57fa35ea7847",
+          "playerId": "pl_c3f26187e5d1e8f094ce8e924ef2fd4b",
+          "anonymous": true,
           "mine": false,
-          "portrait": "./assets/characters/c0fcd4f5e0be4e9b996593e2d02aa529.webp",
-          "portraitAlt": "",
-          "color": "#375963",
+          "name": "匿名角色 1628BE",
+          "player": "匿名玩家 C3F261",
+          "portrait": "",
+          "portraitAlt": "匿名角色",
+          "color": "#53616B",
           "ancestry": "",
           "background": "",
           "classes": [],
-          "occupation": "學生/實習生",
-          "attributes": {
-            "STR": 40,
-            "CON": 50,
-            "SIZ": 60,
-            "DEX": 60,
-            "APP": 55,
-            "INT": 75,
-            "POW": 45,
-            "EDU": 45
-          },
-          "skills": [
-            {
-              "name": "藝術(縫紉)",
-              "value": 40
-            },
-            {
-              "name": "藝術(美術)",
-              "value": 60
-            },
-            {
-              "name": "魅力",
-              "value": 50
-            },
-            {
-              "name": "信用評級",
-              "value": 10
-            },
-            {
-              "name": "急救",
-              "value": 30
-            },
-            {
-              "name": "英文",
-              "value": 30
-            },
-            {
-              "name": "圖書館使用",
-              "value": 65
-            },
-            {
-              "name": "聆聽",
-              "value": 55
-            },
-            {
-              "name": "說服",
-              "value": 40
-            },
-            {
-              "name": "心理學",
-              "value": 26
-            },
-            {
-              "name": "巧手",
-              "value": 40
-            }
-          ],
-          "notes": "就讀北藝大的美術系，平時喜愛畫漫畫、做娃娃相關的手工藝，固定會與同好們交流。雖然不缺錢，但偶爾會投稿自己的作品到自強早報，藉此嶄露自己的技藝。",
+          "occupation": "",
+          "attributes": {},
+          "skills": [],
+          "notes": "",
           "sheetUrl": ""
         }
       ],
       "sessions": []
     }
-  ]
+  ],
+  "publicData": true
 }

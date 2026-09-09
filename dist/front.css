@@ -33,3 +33,6 @@
 @keyframes characterPortraitInNextMobile{from{opacity:0;transform:translate3d(70px,0,0) scale(.95);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}@keyframes characterPortraitInPrevMobile{from{opacity:0;transform:translate3d(-70px,0,0) scale(.95);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){.hall-character-card,.hall-character-card .portrait-hall img{transition:none}.hall-character-card.selected,.character-stage.is-leaving .character-feature>.portrait,.character-stage.is-leaving .character-copy,.character-stage.is-entering .character-feature>.portrait,.character-stage.is-entering .character-copy,.character-stage.is-entering .portrait-feature:after,.character-stage.is-entering .character-stage-bg:before,.character-stage.is-entering .selector-card.selected:after{animation:none!important}}
 .hall-player-head>small{grid-column:4}@media(max-width:720px){.hall-player-head>small{grid-column:2/4}}
+
+
+.portrait-anonymous{background:#53616b;color:#e6edef}.portrait-anonymous .icon{width:64px;height:64px;opacity:.55;margin-bottom:16px}.portrait-anonymous small{font-size:.875rem;letter-spacing:.12em;opacity:.8}.hall-player-avatar .icon{width:24px;height:24px}

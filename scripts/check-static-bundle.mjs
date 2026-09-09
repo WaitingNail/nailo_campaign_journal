@@ -6,12 +6,12 @@ const data=JSON.parse(await readFile(new URL('dist/data/campaigns.json',root),'u
 const element=()=>({innerHTML:'',addEventListener(){},querySelector(){return null;}});
 const elements={app:element(),main:element()};
 const document={baseURI:'https://example.test/nailo_campaign_journal/',title:'',activeElement:null,getElementById:id=>elements[id]||null,querySelector(){return null},querySelectorAll(){return[]}};
-const context={console,URL,document,location:{hash:''},fetch:async()=>({ok:true,json:async()=>data}),requestAnimationFrame:callback=>callback(),setTimeout,clearTimeout,window:{addEventListener(){},scrollTo(){}}};
+const context={console,URL,structuredClone,document,location:{hash:''},fetch:async()=>({ok:true,json:async()=>data}),requestAnimationFrame:callback=>callback(),setTimeout,clearTimeout,window:{addEventListener(){},scrollTo(){}}};
 vm.runInNewContext(bundle,context,{filename:'app.bundle.js'});
 await new Promise(resolve=>setTimeout(resolve,0));
 if(!elements.app.innerHTML.includes('public-site'))throw new Error('Public app did not render.');
 if(/管理後台|#\/manage/.test(elements.app.innerHTML))throw new Error('Public app contains an admin link.');
-if(elements.app.innerHTML.includes('#/hall'))throw new Error('Public app still links to the removed hall of fame.');
+if(!elements.app.innerHTML.includes('#/hall'))throw new Error('Hall of fame navigation is missing.');
 const source=await readFile(new URL('dist/front.js',root),'utf8');
 if(!source.includes("allCharacters(data).filter(x=>x.character.mine)"))throw new Error('Character archive is not restricted to owned characters.');
 const {characters,story,journal}=await import(new URL('dist/front.js',root));
@@ -19,7 +19,7 @@ const {escapeHtml}=await import(new URL('dist/model.js',root));
 const ownedCount=data.campaigns.flatMap(c=>c.characters).filter(character=>character.mine).length;
 const optionCount=html=>(html.match(/role="option"/g)||[]).length;
 if(optionCount(characters(data))!==ownedCount)throw new Error('Character archive rendered a character that is not owned.');
-for(const campaign of data.campaigns){if(story(data,campaign).includes('#/hall'))throw new Error('Story still links to the removed hall of fame.');}
+
 const coverData=structuredClone(data);
 coverData.campaigns[0].cover='./assets/campaigns/test-cover.webp';
 coverData.campaigns[0].coverAlt='測試劇本封面';
@@ -39,3 +39,4 @@ if(!css.includes('.story-head .status{')||!css.includes('background:#2f765a;colo
 if(!css.includes('.portrait-feature{height:100%;min-height:620px;background:transparent'))throw new Error('Character feature card did not return to the previous transparent layout.');
 if(!css.includes('.selector-card>span{position:absolute;left:0;right:0;bottom:0'))throw new Error('Character selector label did not return to the previous alignment.');
 console.log(`Public bundle booted with ${data.campaigns.length} campaigns and no admin link.`);
+

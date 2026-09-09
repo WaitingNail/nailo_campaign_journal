@@ -1,7 +1,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 
 const dist=new URL('../dist/',import.meta.url);
-const modules=['model.js','shared.js','front.js','public-app.js'];
+const modules=['privacy.js','model.js','shared.js','front.js','public-app.js'];
 const rewriteImports=source=>source.replace(/^import\s*\{([^}]+)\}\s*from\s*['"]([^'"]+)['"];\s*$/gm,(_,bindings,dependency)=>{
  const destructuring=bindings.split(',').map(binding=>binding.trim().replace(/\s+as\s+/,': ')).join(', ');
  return `const { ${destructuring} } = __modules[${JSON.stringify(dependency)}];`;
@@ -16,3 +16,4 @@ for(const filename of modules){
 bundle+='})();\n';
 await writeFile(new URL('app.bundle.js',dist),bundle);
 console.log(`Built public bundle from ${modules.length} modules.`);
+

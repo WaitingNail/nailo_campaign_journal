@@ -1,7 +1,67 @@
 (() => {
   "use strict";
   const __modules = Object.create(null);
+  __modules["./privacy.js"] = (() => {
+// Shared by the private editor, server publisher, and public renderer.
+const isAnonymous = p => typeof p.anonymous === 'boolean' ? p.anonymous : !p.mine;
+const playerKey = p => p.playerId || p.player.trim().normalize('NFKC');
+const nameKey = name => name.trim().normalize('NFKC');
+const makeId = prefix => prefix + crypto.randomUUID().replaceAll('-', '');
+const anonymousPlayerName = id => `匿名玩家 ${id.replace(/^pl_/, '').slice(0, 6).toUpperCase()}`;
+const anonymousCharacterName = id => `匿名角色 ${id.replace(/^pc_/, '').slice(0, 6).toUpperCase()}`;
+
+function normalizePrivacy(data, previous = { campaigns: [] }, ids = {}) {
+ const prior = new Map(), names = new Map();
+ const remember = p => {
+  if (!p.playerId) return;
+  const key = nameKey(p.player);
+  if (!names.has(key)) names.set(key, new Set());
+  names.get(key).add(p.playerId);
+ };
+ for (const c of previous.campaigns) for (const p of c.characters) { prior.set(`${c.id}/${p.id}`, p); remember(p); }
+ for (const c of data.campaigns) for (const p of c.characters) remember(p);
+ for (const c of data.campaigns) for (const p of c.characters) {
+  const old = prior.get(`${c.id}/${p.id}`), matching = names.get(nameKey(p.player));
+  p.playerId ||= (old && nameKey(old.player) === nameKey(p.player) ? old.playerId : '') || (matching?.size === 1 ? [...matching][0] : (ids.player ? ids.player(nameKey(p.player)) : makeId('pl_')));
+  p.publicId ||= old?.publicId || (ids.character ? ids.character(c.id, p.id) : makeId('pc_'));
+  p.anonymous = isAnonymous(p);
+  remember(p);
+ }
+ return data;
+}
+
+function playersInCampaign(campaign) {
+ const groups = new Map();
+ for (const p of campaign.characters) {
+  const id = playerKey(p);
+  if (!groups.has(id)) groups.set(id, { id, name: p.player, characters: [] });
+  groups.get(id).characters.push(p);
+ }
+ return [...groups.values()];
+}
+
+function toPublicJournal(data) {
+ const result = structuredClone(data);
+ const anonymousPlayers = new Set(result.campaigns.flatMap(c => c.characters.filter(isAnonymous).map(playerKey)));
+ result.publicData = true;
+ for (const c of result.campaigns) c.characters = c.characters.map(p => {
+  const anonymous = isAnonymous(p), id = p.publicId || p.id, playerId = playerKey(p);
+  const common = { id, playerId, anonymous, mine: p.mine,
+   name: anonymous ? anonymousCharacterName(id) : p.name,
+   player: anonymousPlayers.has(playerId) ? anonymousPlayerName(playerId) : p.player };
+  if (anonymous) return { ...common, portrait: '', portraitAlt: '匿名角色', color: '#53616B',
+   ancestry: '', background: '', classes: [], occupation: '', attributes: {}, skills: [], notes: '', sheetUrl: '' };
+  return { ...common, portrait: p.portrait || '', portraitAlt: p.portraitAlt || '', color: p.color || '#375963',
+   ancestry: p.ancestry || '', background: p.background || '', classes: p.classes || [], occupation: p.occupation || '',
+   attributes: p.attributes || {}, skills: p.skills || [], notes: p.notes || '', sheetUrl: p.sheetUrl || '' };
+ });
+ return result;
+}
+
+    return { isAnonymous, playerKey, anonymousPlayerName, anonymousCharacterName, normalizePrivacy, playersInCampaign, toPublicJournal };
+  })();
   __modules["./model.js"] = (() => {
+const { playerKey, playersInCampaign } = __modules["./privacy.js"];
 const SYSTEMS={dnd:{name:'Dungeons & Dragons',short:'D&D',icon:'swords',color:'#be9656'},coc:{name:'Call of Cthulhu',short:'CoC',icon:'moon',color:'#8d7aae'},other:{name:'其他系統',short:'其他系統',icon:'compass',color:'#6b9fa0'}};
 const STATUSES={active:'進行中',completed:'已完結',paused:'暫停中',planned:'籌備中',abandoned:'已中止'};
 const ATTRS={STR:'力量',CON:'體質',SIZ:'體型',DEX:'敏捷',APP:'外貌',INT:'智力',POW:'意志',EDU:'教育'};
@@ -15,12 +75,12 @@ function safeImageSrc(value){
  return /^(?:\.\/)?(?:assets|images)\/[a-zA-Z0-9_./-]+\.(?:png|webp|jpe?g)$/i.test(value)?value:'';
 }
 const level=char=>char.classes?.length?char.classes.reduce((n,c)=>n+c.level,0):null;
-const party=campaign=>[...new Set(campaign.characters.map(c=>c.player).filter(Boolean))];
+const party=campaign=>playersInCampaign(campaign).map(p=>p.name);
 const ownCharacters=campaigns=>campaigns.flatMap(c=>c.characters.filter(p=>p.mine));
 const countBy=(values)=>Object.entries(values.filter(v=>v!==null&&v!==undefined&&v!=='').reduce((a,v)=>(a[v]=(a[v]||0)+1,a),{})).map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value||a.name.localeCompare(b.name,'zh-Hant'));
 const mean=values=>values.length?Math.round(values.reduce((a,b)=>a+b,0)/values.length*10)/10:null;
 function buckets(values,ranges){return ranges.map(([name,min,max])=>({name,value:values.filter(v=>v>=min&&v<=max).length}))}
-function getStats(campaigns,role){const chars=role==='played'?ownCharacters(campaigns):campaigns.flatMap(c=>c.characters);return{campaigns:campaigns.length,characters:chars.length,sessions:campaigns.reduce((a,c)=>a+c.sessions.length,0),players:new Set(campaigns.flatMap(party)).size,active:campaigns.filter(c=>c.status==='active').length,systems:countBy(campaigns.map(c=>c.system==='other'?c.systemName||'其他系統':SYSTEMS[c.system].short)),chars};}
+function getStats(campaigns,role){const chars=role==='played'?ownCharacters(campaigns):campaigns.flatMap(c=>c.characters);return{campaigns:campaigns.length,characters:chars.length,sessions:campaigns.reduce((a,c)=>a+c.sessions.length,0),players:new Set(campaigns.flatMap(c=>c.characters.map(playerKey))).size,active:campaigns.filter(c=>c.status==='active').length,systems:countBy(campaigns.map(c=>c.system==='other'?c.systemName||'其他系統':SYSTEMS[c.system].short)),chars};}
 function validateData(data){
  const fail=m=>{throw new Error(m)};const txt=(v,max=1000)=>typeof v==='string'&&v.length<=max;
  const date=v=>v===''||(typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!isNaN(Date.parse(v))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v);
@@ -61,7 +121,7 @@ function validateData(data){
   })();
   __modules["./shared.js"] = (() => {
 const { STATUSES, escapeHtml: e } = __modules["./model.js"];
-const paths={book:'<path d="M4 3h12a4 4 0 0 1 4 4v14H7a3 3 0 0 1-3-3V3Z"/><path d="M4 17h16M8 7h8M8 10h6"/>',arrow:'<path d="m9 5 7 7-7 7"/>',back:'<path d="m12 5-7 7 7 7M5 12h15"/>',link:'<path d="M14 3h7v7M21 3l-9 9M10 4H4v16h16v-6"/>'};
+const paths={user:'<circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/>',book:'<path d="M4 3h12a4 4 0 0 1 4 4v14H7a3 3 0 0 1-3-3V3Z"/><path d="M4 17h16M8 7h8M8 10h6"/>',arrow:'<path d="m9 5 7 7-7 7"/>',back:'<path d="m12 5-7 7 7 7M5 12h15"/>',link:'<path d="M14 3h7v7M21 3l-9 9M10 4H4v16h16v-6"/>'};
 const icon=name=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name]||paths.book}</svg>`;
 const status=campaign=>`<span class="status ${e(campaign.status)}">${STATUSES[campaign.status]}</span>`;
 
@@ -69,6 +129,7 @@ const status=campaign=>`<span class="status ${e(campaign.status)}">${STATUSES[ca
     return { icon, status };
   })();
   __modules["./front.js"] = (() => {
+const { playerKey } = __modules["./privacy.js"];
 const { SYSTEMS, STATUSES, COLORS, escapeHtml: e, safeImageSrc, level, party, countBy, getStats } = __modules["./model.js"];
 const { icon, status } = __modules["./shared.js"];
 const fmt=d=>d?new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'long',day:'numeric'}).format(new Date(`${d}T00:00:00`)):'日期未定';
@@ -78,17 +139,17 @@ const portraitKey=(c,p)=>`${encodeURIComponent(c.id)}/${encodeURIComponent(p.id)
 const characterColor=(c,p)=>{if(/^#[0-9a-fA-F]{6}$/.test(p.color||''))return p.color;const key=`${c.id}:${p.id}`;let n=0;for(const ch of key)n=(n*31+ch.charCodeAt(0))>>>0;return ['#315B63','#7B5264','#53698B','#6D6547','#694D76','#3F6C5B','#865D45'][n%7]};
 const allCharacters=data=>data.campaigns.flatMap(c=>c.characters.map(p=>({campaign:c,character:p,key:portraitKey(c,p)})));
 const myCharacters=data=>allCharacters(data).filter(x=>x.character.mine);
-const characterHref=(c,p)=>`#/characters/${portraitKey(c,p)}`;
+const characterHref=(c,p)=>`#/${p.mine?'characters':'hall'}/${portraitKey(c,p)}`;
 
 function characterArrow(direction,variant,disabled=false){
  return `<button type="button" class="character-arrow ${variant}-arrow ${direction}" data-action="char-${direction}" aria-label="${direction==='prev'?'上一位角色':'下一位角色'}"${disabled?' disabled':''}>${icon('arrow')}</button>`;
 }
 function portrait(c,p,variant='card',navigation=''){
  const src=safeImageSrc(p.portrait||''),color=characterColor(c,p);
- return `<div class="portrait portrait-${variant}" style="--portrait-bg:${color}">${src?`<img src="${e(src)}" alt="${e(p.portraitAlt||`${p.name}角色立繪`)}">`:`<div class="portrait-fallback" aria-label="${e(p.name)}尚未上傳立繪"><span>${e(p.name.slice(0,1))}</span><small>PORTRAIT</small></div>`}<span class="portrait-system">${e(systemName(c))}</span>${navigation}</div>`;
+ return `<div class="portrait portrait-${variant}" style="--portrait-bg:${color}">${p.anonymous?`<div class="portrait-fallback portrait-anonymous" role="img" aria-label="匿名角色">${icon('user')}<small>匿名角色</small></div>`:src?`<img src="${e(src)}" alt="${e(p.portraitAlt||`${p.name}角色立繪`)}">`:`<div class="portrait-fallback" aria-label="${e(p.name)}尚未上傳立繪"><span>${e(p.name.slice(0,1))}</span><small>PORTRAIT</small></div>`}<span class="portrait-system">${e(systemName(c))}</span>${navigation}</div>`;
 }
-function publicNav(route){const active=name=>route.page===name?'active':'';return `<header class="public-header"><a href="#/" class="public-brand"><img src="./favicon.svg" alt=""><span><strong>奈羅的團務手記</strong><small>THE CAMPAIGN JOURNAL</small></span></a><nav class="public-nav" aria-label="前台導覽"><a href="#/" class="${active('home')}">首頁</a><a href="#/journal/all/all" class="${active('journal')||active('public-campaign')}">團務誌</a><a href="#/characters" class="${active('characters')}">角色名鑑</a><a href="#/stats" class="${active('stats')}">冒險統計</a></nav></header>`}
-function frontShell(data,route,content,local=false){return `<div class="public-site">${publicNav(route)}<main id="main" class="public-main" tabindex="-1">${data.demo?`<div class="demo-ribbon">目前使用虛構示範資料，版面與功能可直接操作。</div>`:''}${content}</main><footer class="public-footer"><div><strong>奈羅的團務手記</strong><p>在骰聲停下以後，把故事留在這裡。</p></div><div><a href="#/journal/played/all">我跑過的團</a><a href="#/journal/gm/all">我帶過的團</a><a href="#/characters">角色名鑑</a></div><span>© ${new Date().getFullYear()} ${e(data.ownerName)}${local?' · 本機草稿':''}</span></footer></div>`}
+function publicNav(route){const active=name=>route.page===name?'active':'';return `<header class="public-header"><a href="#/" class="public-brand"><img src="./favicon.svg" alt=""><span><strong>奈羅的團務手記</strong><small>THE CAMPAIGN JOURNAL</small></span></a><nav class="public-nav" aria-label="前台導覽"><a href="#/" class="${active('home')}">首頁</a><a href="#/journal/all/all" class="${active('journal')||active('public-campaign')}">團務誌</a><a href="#/characters" class="${active('characters')}">角色名鑑</a><a href="#/hall" class="${active('hall')}">冒險者名人堂</a><a href="#/stats" class="${active('stats')}">冒險統計</a></nav></header>`}
+function frontShell(data,route,content,local=false){return `<div class="public-site">${publicNav(route)}<main id="main" class="public-main" tabindex="-1">${data.demo?`<div class="demo-ribbon">目前使用虛構示範資料，版面與功能可直接操作。</div>`:''}${content}</main><footer class="public-footer"><div><strong>奈羅的團務手記</strong><p>在骰聲停下以後，把故事留在這裡。</p></div><div><a href="#/journal/played/all">我跑過的團</a><a href="#/journal/gm/all">我帶過的團</a><a href="#/characters">角色名鑑</a><a href="#/hall">冒險者名人堂</a></div><span>© ${new Date().getFullYear()} ${e(data.ownerName)}${local?' · 本機草稿':''}</span></footer></div>`}
 
 function campaignVisual(c,wide=false){const cover=safeImageSrc(c.cover||'');return `<div class="campaign-visual ${wide?'wide':''}" style="--campaign-color:${SYSTEMS[c.system].color}">${cover?`<img class="campaign-cover" src="${e(cover)}" alt="${e(c.coverAlt||`${c.title}劇本封面`)}">`:`<div class="campaign-cover-fallback">${icon(SYSTEMS[c.system].icon)}<strong>${e(c.title.slice(0,1))}</strong><small>CAMPAIGN COVER</small></div>`}<div class="campaign-visual-copy"><span>${e(systemName(c))}</span><small>${c.role==='played'?'PLAYER’S JOURNAL':'GAME MASTER’S JOURNAL'}</small></div></div>`}
 function campaignCard(c){const latest=c.sessions.at(-1);return `<article class="blog-card"><a href="#/story/${e(c.id)}" class="blog-card-image">${campaignVisual(c)}</a><div class="blog-card-body"><div class="post-meta"><span>${e(systemName(c))}</span><time>${fmt(latest?.date||c.startDate)}</time></div><h3><a href="#/story/${e(c.id)}">${e(c.title)}</a></h3><p>${e(excerpt(latest?.summary||c.description))}</p><div class="blog-card-foot"><span>${c.role==='played'?`GM · ${e(c.gm)}`:`${party(c).length} 位玩家`}</span><a href="#/story/${e(c.id)}">閱讀團務 ${icon('arrow')}</a></div></div></article>`}
@@ -111,18 +172,31 @@ function characters(data,key){
  return `<section class="character-stage" data-character-index="${index}"><div class="character-stage-bg" data-label="${e(p.name)}" style="--portrait-bg:${p.color||'#375963'}"></div><div class="character-feature">${portrait(c,p,'feature',characterArrow('prev','feature',list.length<2)+characterArrow('next','feature',list.length<2))}<div class="character-copy"><span class="front-kicker">${e(systemName(c))} · 我的角色</span><h1>${e(p.name)}</h1><p class="character-class">${e(charSubtitle(c,p))}</p><dl><div><dt>所屬團務</dt><dd><a href="#/story/${e(c.id)}">${e(c.title)}</a></dd></div><div><dt>玩家</dt><dd>${e(p.player)}</dd></div><div><dt>GM</dt><dd>${e(c.gm)}</dd></div>${p.ancestry?`<div><dt>種族</dt><dd>${e(p.ancestry)}</dd></div>`:''}${p.background?`<div><dt>背景</dt><dd>${e(p.background)}</dd></div>`:''}</dl><p class="character-description">${e(p.notes||'這名角色的故事，還等著被寫下。')}</p>${p.sheetUrl?`<a class="front-text-link" href="${e(p.sheetUrl)}" target="_blank" rel="noopener noreferrer">開啟角色卡 ${icon('link')}</a>`:''}</div></div><div class="character-selector-wrap">${characterArrow('prev','selector',list.length<2)}<div class="character-selector" id="character-selector" role="listbox" aria-label="選擇角色">${list.map((x,i)=>`<a role="option" aria-selected="${i===index}" href="#/characters/${x.key}" class="selector-card ${i===index?'selected':''}" data-character-select data-selector-index="${i}" style="--portrait-bg:${x.character.color||'#375963'}">${portrait(x.campaign,x.character,'selector')}<span><strong>${e(x.character.name)}</strong><small>${e(x.campaign.title)}</small></span></a>`).join('')}</div>${characterArrow('next','selector',list.length<2)}</div><p class="selector-help">使用左右方向鍵、箭頭或角色卡循環選擇 · ${index+1} / ${list.length}</p></section>`;
 }
 
-function story(data,c){if(!c)return `<section class="front-empty"><h1>找不到這場冒險</h1><a class="front-button" href="#/journal/all/all">返回團務誌</a></section>`;return `<article class="story-page"><header class="story-head"><a href="#/journal/${c.role}/${c.system}" class="front-text-link">${icon('back')}返回團務誌</a><span>${e(systemName(c))} · ${c.role==='played'?'PLAYER’S JOURNAL':'GAME MASTER’S JOURNAL'}</span><h1>${e(c.title)}</h1><p>${e(c.description||'這場冒險的介紹尚未寫下。')}</p><div><span>${status(c)}</span><span>GM · ${e(c.gm)}</span><span>${fmt(c.startDate)}</span><span>${c.sessions.length} 回紀錄</span></div></header><section class="story-party"><div class="front-section-head"><div><span>THE PARTY</span><h2>同行的角色</h2></div></div><div class="story-character-row">${c.characters.map(p=>`<${p.mine?'a':'div'}${p.mine?` href="${characterHref(c,p)}"`:''}>${portrait(c,p,'story')}<strong>${e(p.name)}</strong><small>${e(charSubtitle(c,p))}</small></${p.mine?'a':'div'}>`).join('')}</div></section><section class="story-entries"><header><span>SESSION ARCHIVE</span><h2>冒險紀錄</h2></header>${c.sessions.length?c.sessions.map((s,i)=>`<article class="story-entry"><div class="story-entry-no">${String(i+1).padStart(2,'0')}</div><div><time>${fmt(s.date)}</time><h3>${e(s.title)}</h3><p>${e(s.summary||'本回摘要尚未寫下。')}</p>${s.url?`<a class="front-text-link" href="${e(s.url)}" target="_blank" rel="noopener noreferrer">閱讀完整團錄 ${icon('link')}</a>`:''}</div></article>`).join(''):`<div class="front-empty"><p>尚未新增回次紀錄。</p></div>`}</section></article>`}
+function hallOfFame(data,key=''){
+ const list=allCharacters(data);
+ if(!list.length)return `<section class="front-empty"><span>ADVENTURER HALL OF FAME</span><h1>冒險者名人堂還是空的</h1><p>所有玩家角色公開後，便會收錄在這裡。</p></section>`;
+ const groups=new Map();
+ for(const item of list){const player=playerKey(item.character);if(!groups.has(player))groups.set(player,[]);groups.get(player).push(item)}
+ const sorted=[...groups.entries()].sort(([,a],[,b])=>Number(b.some(x=>x.character.mine))-Number(a.some(x=>x.character.mine))||a[0].character.player.localeCompare(b[0].character.player,'zh-Hant'));
+ return `<section class="hall-page"><header class="hall-hero"><span>ADVENTURER HALL OF FAME</span><h1>冒險者名人堂</h1><p>把每位同行者曾經成為的角色，依玩家收藏在同一排回憶裡。</p><div class="hall-totals"><strong>${sorted.length}<small>位玩家</small></strong><strong>${list.length}<small>名角色</small></strong></div></header><div class="hall-players">${sorted.map(([player,items],groupIndex)=>`<section class="hall-player-group" data-hall-player="${e(items[0].character.player)}"><header class="hall-player-head"><span class="hall-player-avatar">${items.some(x=>x.character.anonymous)?icon('user'):e(items[0].character.player.slice(0,1))}</span><div><span>PLAYER ${String(groupIndex+1).padStart(2,'0')}</span><h2>${e(items[0].character.player)}</h2></div>${items.some(x=>x.character.mine)?'<b>我的角色</b>':''}<small>${items.length} 名角色</small></header><div class="hall-character-grid">${items.map(({campaign:c,character:p,key:itemKey})=>`<a href="#/story/${e(c.id)}" class="hall-character-card ${itemKey===key?'selected':''}" data-hall-character="${itemKey}" ${itemKey===key?'aria-current="true"':''}>${portrait(c,p,'hall')}<div><span>${e(systemName(c))}</span><h3>${e(p.name)}</h3><p>${p.anonymous?'匿名角色':e(charSubtitle(c,p))}</p><small>${e(c.title)} ${icon('arrow')}</small></div></a>`).join('')}</div></section>`).join('')}</div></section>`;
+}
+
+function story(data,c){if(!c)return `<section class="front-empty"><h1>找不到這場冒險</h1><a class="front-button" href="#/journal/all/all">返回團務誌</a></section>`;return `<article class="story-page"><header class="story-head"><a href="#/journal/${c.role}/${c.system}" class="front-text-link">${icon('back')}返回團務誌</a><span>${e(systemName(c))} · ${c.role==='played'?'PLAYER’S JOURNAL':'GAME MASTER’S JOURNAL'}</span><h1>${e(c.title)}</h1><p>${e(c.description||'這場冒險的介紹尚未寫下。')}</p><div><span>${status(c)}</span><span>GM · ${e(c.gm)}</span><span>${fmt(c.startDate)}</span><span>${c.sessions.length} 回紀錄</span></div></header><section class="story-party"><div class="front-section-head"><div><span>THE PARTY</span><h2>同行的角色</h2></div></div><div class="story-character-row">${c.characters.map(p=>`<a href="${characterHref(c,p)}">${portrait(c,p,'story')}<strong>${e(p.name)}</strong><small>${e(charSubtitle(c,p))}</small></a>`).join('')}</div></section><section class="story-entries"><header><span>SESSION ARCHIVE</span><h2>冒險紀錄</h2></header>${c.sessions.length?c.sessions.map((s,i)=>`<article class="story-entry"><div class="story-entry-no">${String(i+1).padStart(2,'0')}</div><div><time>${fmt(s.date)}</time><h3>${e(s.title)}</h3><p>${e(s.summary||'本回摘要尚未寫下。')}</p>${s.url?`<a class="front-text-link" href="${e(s.url)}" target="_blank" rel="noopener noreferrer">閱讀完整團錄 ${icon('link')}</a>`:''}</div></article>`).join(''):`<div class="front-empty"><p>尚未新增回次紀錄。</p></div>`}</section></article>`}
 
 function systemBars(items){const max=Math.max(1,...items.map(x=>x.value));return `<div class="front-bars">${items.map((x,i)=>`<div><span>${e(x.name)}</span><i><b style="width:${x.value/max*100}%;background:${COLORS[i%COLORS.length]}"></b></i><strong>${x.value}</strong></div>`).join('')}</div>`}
 function stats(data){const played=data.campaigns.filter(c=>c.role==='played'),gm=data.campaigns.filter(c=>c.role==='gm'),ps=getStats(played,'played'),gs=getStats(gm,'gm');const systems=countBy(data.campaigns.map(c=>systemName(c)));return `<section class="front-page-head"><span>THE NUMBERS BEHIND THE STORIES</span><h1>冒險統計</h1><p>從角色與團務紀錄整理出的旅程輪廓。</p></section><div class="front-stat-numbers"><div><strong>${data.campaigns.length}</strong><span>場團務</span></div><div><strong>${ps.characters}</strong><span>我的角色</span></div><div><strong>${gs.players}</strong><span>主持過的玩家</span></div><div><strong>${ps.sessions+gs.sessions}</strong><span>回冒險紀錄</span></div></div><div class="front-stats-grid"><section><span>SYSTEMS</span><h2>探索的遊戲系統</h2>${systemBars(systems)}</section><section><span>TWO SIDES OF THE TABLE</span><h2>玩家與主持</h2>${systemBars([{name:'我跑過的團',value:ps.campaigns},{name:'我帶過的團',value:gs.campaigns}])}</section></div>`}
 
 function scrollSelected(){const selected=document.querySelector('.selector-card.selected'),rail=document.getElementById('character-selector');if(!selected||!rail)return;const overflow=rail.scrollWidth>rail.clientWidth+4;document.querySelectorAll('.selector-arrow').forEach(b=>b.hidden=!overflow);if(overflow)rail.scrollTo({left:selected.offsetLeft-(rail.clientWidth-selected.clientWidth)/2,behavior:'smooth'})}
 
-    return { allCharacters, frontShell, home, journal, characters, story, stats, scrollSelected };
+
+function scrollHallSelected(){document.querySelector('.hall-character-card.selected')?.scrollIntoView({block:'center',behavior:'smooth'})}
+
+    return { allCharacters, frontShell, home, journal, characters, hallOfFame, story, stats, scrollSelected, scrollHallSelected };
   })();
   (() => {
+const { toPublicJournal } = __modules["./privacy.js"];
 const { validateData, escapeHtml: e } = __modules["./model.js"];
-const { frontShell, home, journal, characters, story, stats, allCharacters, scrollSelected } = __modules["./front.js"];
+const { frontShell, home, journal, characters, hallOfFame, story, stats, allCharacters, scrollSelected, scrollHallSelected } = __modules["./front.js"];
 const app=document.getElementById('app');
 let data,route={page:'home'},characterTransitionDirection=0,characterTransitionTimer=0;
 const reducedMotion=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -131,7 +205,7 @@ function parseRoute(){
  const parts=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean);
  if(!parts.length)return{page:'home'};
  if(parts[0]==='journal')return{page:'journal',role:['all','played','gm'].includes(parts[1])?parts[1]:'all',system:['all','dnd','coc','other'].includes(parts[2])?parts[2]:'all'};
- if(parts[0]==='characters')return{page:parts[0],key:parts.length>2?`${parts[1]}/${parts[2]}`:''};
+ if(['characters','hall'].includes(parts[0]))return{page:parts[0],key:parts.length>2?`${parts[1]}/${parts[2]}`:''};
  if(parts[0]==='story')return{page:'story',id:parts[1]};
  if(parts[0]==='stats')return{page:'stats'};
  return{page:'not-found'};
@@ -142,6 +216,7 @@ function render(){
  if(route.page==='home')content=home(data);
  else if(route.page==='journal')content=journal(data,route.role,route.system);
  else if(route.page==='characters')content=characters(data,route.key);
+ else if(route.page==='hall')content=hallOfFame(data,route.key);
  else if(route.page==='story')content=story(data,data.campaigns.find(c=>c.id===route.id));
  else if(route.page==='stats')content=stats(data);
  else content=`<section class="front-empty"><h1>找不到這一頁</h1><a class="front-button" href="#/">回到首頁</a></section>`;
@@ -154,7 +229,8 @@ function render(){
   }
   characterTransitionDirection=0;requestAnimationFrame(scrollSelected);
  }
- const titles={home:'首頁',journal:'團務誌',characters:'角色名鑑',stats:'冒險統計'};
+ if(route.page==='hall'&&route.key)requestAnimationFrame(scrollHallSelected);
+ const titles={home:'首頁',journal:'團務誌',characters:'角色名鑑',hall:'冒險者名人堂',stats:'冒險統計'};
  const selected=data.campaigns.find(c=>c.id===route.id);
  document.title=`${selected?.title||titles[route.page]||'團務手記'} · ${data.ownerName}`;
 }
@@ -194,12 +270,13 @@ async function boot(){
  try{
   const response=await fetch(new URL('./data/campaigns.json',document.baseURI),{cache:'no-cache'});
   if(!response.ok)throw new Error(`HTTP ${response.status}`);
-  data=validateData(await response.json());render();
+  data=toPublicJournal(validateData(await response.json()));render();
  }catch(error){
   app.innerHTML=`<div class="boot"><h1>手記暫時無法開啟</h1><p>無法載入團務資料，請稍後重新整理。</p><p>${e(error.message)}</p></div>`;
  }
 }
 boot();
+
 
   })();
 })();

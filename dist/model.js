@@ -1,3 +1,4 @@
+import {playerKey,playersInCampaign} from './privacy.js';
 export const SYSTEMS={dnd:{name:'Dungeons & Dragons',short:'D&D',icon:'swords',color:'#be9656'},coc:{name:'Call of Cthulhu',short:'CoC',icon:'moon',color:'#8d7aae'},other:{name:'其他系統',short:'其他系統',icon:'compass',color:'#6b9fa0'}};
 export const STATUSES={active:'進行中',completed:'已完結',paused:'暫停中',planned:'籌備中',abandoned:'已中止'};
 export const ATTRS={STR:'力量',CON:'體質',SIZ:'體型',DEX:'敏捷',APP:'外貌',INT:'智力',POW:'意志',EDU:'教育'};
@@ -11,12 +12,12 @@ export function safeImageSrc(value){
  return /^(?:\.\/)?(?:assets|images)\/[a-zA-Z0-9_./-]+\.(?:png|webp|jpe?g)$/i.test(value)?value:'';
 }
 export const level=char=>char.classes?.length?char.classes.reduce((n,c)=>n+c.level,0):null;
-export const party=campaign=>[...new Set(campaign.characters.map(c=>c.player).filter(Boolean))];
+export const party=campaign=>playersInCampaign(campaign).map(p=>p.name);
 export const ownCharacters=campaigns=>campaigns.flatMap(c=>c.characters.filter(p=>p.mine));
 export const countBy=(values)=>Object.entries(values.filter(v=>v!==null&&v!==undefined&&v!=='').reduce((a,v)=>(a[v]=(a[v]||0)+1,a),{})).map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value||a.name.localeCompare(b.name,'zh-Hant'));
 export const mean=values=>values.length?Math.round(values.reduce((a,b)=>a+b,0)/values.length*10)/10:null;
 export function buckets(values,ranges){return ranges.map(([name,min,max])=>({name,value:values.filter(v=>v>=min&&v<=max).length}))}
-export function getStats(campaigns,role){const chars=role==='played'?ownCharacters(campaigns):campaigns.flatMap(c=>c.characters);return{campaigns:campaigns.length,characters:chars.length,sessions:campaigns.reduce((a,c)=>a+c.sessions.length,0),players:new Set(campaigns.flatMap(party)).size,active:campaigns.filter(c=>c.status==='active').length,systems:countBy(campaigns.map(c=>c.system==='other'?c.systemName||'其他系統':SYSTEMS[c.system].short)),chars};}
+export function getStats(campaigns,role){const chars=role==='played'?ownCharacters(campaigns):campaigns.flatMap(c=>c.characters);return{campaigns:campaigns.length,characters:chars.length,sessions:campaigns.reduce((a,c)=>a+c.sessions.length,0),players:new Set(campaigns.flatMap(c=>c.characters.map(playerKey))).size,active:campaigns.filter(c=>c.status==='active').length,systems:countBy(campaigns.map(c=>c.system==='other'?c.systemName||'其他系統':SYSTEMS[c.system].short)),chars};}
 export function validateData(data){
  const fail=m=>{throw new Error(m)};const txt=(v,max=1000)=>typeof v==='string'&&v.length<=max;
  const date=v=>v===''||(typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!isNaN(Date.parse(v))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v);
@@ -51,3 +52,4 @@ export function validateData(data){
  }
  return data;
 }
+
